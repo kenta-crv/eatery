@@ -60,13 +60,13 @@ class ReviewsController < ApplicationController
     end
 
     def destroy
-      #@review = Review.find(params[:id])
+      @review = Review.find(params[:id])
       @review.destroy
        redirect_to reviews_path
     end
 
     def update
-      #@review = Review.find(params[:id])
+      @review = Review.find(params[:id])
       if @review.update(review_params)
         redirect_to reviews_path
       else
