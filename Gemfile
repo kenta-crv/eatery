@@ -71,7 +71,6 @@ gem 'omniauth-twitter'
 gem 'breadcrumbs_on_rails'
 #画像アップロード
 gem 'carrierwave'
-gem 'mini_magick'
 #ページネート
 gem 'kaminari'
 #Slim

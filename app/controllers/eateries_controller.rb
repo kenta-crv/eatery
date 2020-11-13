@@ -94,10 +94,10 @@ class EateriesController < ApplicationController
         #:career, #キャリア
         #:remarks, #備考
         #:takeout,
-        #:file,
+        :file,
         #:image_1,
         #:image_2,
-        :canonical_name
+        #:canonical_name
         )
     end
 end
