@@ -64,6 +64,21 @@ class Eatery < ApplicationRecord
     prefecture + city + town + chome + building
   end
 
+  def self.GenreLists
+    @@GenreLists
+  end
+
+  @@GenreLists = [
+    [0,"不在"],
+    [1,"担当者不在"],
+    [2,"見込"],
+    [3,"折返待"],
+    ["app","APP"],
+    ["ng_now","今は結構"],
+    ["ng_foreign","外国人NG"],
+    ["ng_front","フロントNG"]
+  ]
+
   enum genre_code: { 北海道:0,青森県:1,岩手県:2,宮城県:3,秋田県:4,山形県:5,福島県:6,
                           茨城県:7,栃木県:8,群馬県:9,埼玉県:10,千葉県:11,東京都:12,神奈川県:13,
                           新潟県:14,富山県:15,石川県:16,福井県:17,山梨県:18,長野県:19,

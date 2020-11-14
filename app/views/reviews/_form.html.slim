@@ -46,52 +46,6 @@
            = f.select :imagination_score, Review.ScoreNumbers
            |点
        tr
-         td
-           strong.label 必須
-         td.arrow_box
-           | 美味しさ
-         td
-           = f.select :cost_performance_score, Review.ScoreNumbers
-           |点
-       tr
-         td
-           strong.label 必須
-         td.arrow_box
-           = f.select(:original1,[\
-           ["",""],\
-           ["旅行","旅行"],\
-           ["デート","デート"],\
-           ["お酒","お酒"],
-           ["素材","素材"],
-           ["独創性","独創性"],
-          ])
-         td
-           = f.select :original1_score, Review.ScoreNumbers
-           |点
-       tr
-          td
-            strong.label 必須
-          td.arrow_box
-            = f.select(:original2,[\
-            ["",""],\
-            ["旅行","旅行"],\
-            ["デート","デート"],\
-            ["お酒","お酒"],
-            ["素材","素材"],
-            ["独創性","独創性"],
-           ])
-          td
-            = f.select :original2_score, Review.ScoreNumbers
-            |点
-       tr
-          td
-            strong.label 必須
-          td.arrow_box
-            | 総合点
-          td
-            = f.select :original2_score, Review.ScoreNumbers
-            |点
-       tr
           td
             strong.label 必須
           td.arrow_box

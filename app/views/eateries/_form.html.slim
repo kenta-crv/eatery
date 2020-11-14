@@ -56,7 +56,12 @@
         td.arrow_box
           | ジャンル
         td
-        /  = select :genre, :tags, tags, { selected: selected_tags }, { multiple: true, name: 'eatery[tags]', class: 'form-control js-searchable'
+          = f.collection_select :genre, Eatery.GenreLists, :first, :first, prompt: "選択してください", class: 'form-control', multiple: true
+
+          /= select :genre, :tags, tags, { selected: selected_tags }, { multiple: true, name: 'genre[tags]', class: 'form-control js-searchable' }
+
+          /= f.select(:genre, [["A","A"],
+          /                        ["V","V"],],{ :Prompt => "Please select" , multiple: true, name: 'eatery[tags]', class: 'form-control js-searchable'})
 
 
       tr
