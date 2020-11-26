@@ -10,7 +10,7 @@ br
     .col-sm-12
       h1.headline
         | グルメレビュー
-      - @eateries.each do |eatery|
+      - @eateries.find_each do |eatery|
        .row
         .col-sm-1
         .col-sm-3.center

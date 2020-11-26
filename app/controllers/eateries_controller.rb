@@ -80,7 +80,7 @@ class EateriesController < ApplicationController
         :chome,
         :building,
         #:payment, #支払方法
-        :genre, #ジャンル
+         #ジャンル
         #:payment, #支払方法
         #:price_lunch, #ランチ単価
         #:price_dinner, #ディナー単価
@@ -98,6 +98,7 @@ class EateriesController < ApplicationController
         #:image_1,
         #:image_2,
         #:canonical_name
+        genre: []
         )
     end
 end
