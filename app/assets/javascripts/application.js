@@ -11,14 +11,10 @@
 // about supported directives.
 //
 //= require froala_editor.min.js
-//= require select2
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-//= require jquery
-//= require jquery_ujs
-//= require swiper/swiper-bundle.js
-
+//= require swiper.js
 
 $(function() {
     $('.navToggle').click(function() {

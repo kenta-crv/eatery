@@ -11,14 +11,10 @@
  * It is generally better to create a new file per style scope.
  *
  *= require froala_editor.min.css
- *= require select2
  *= require_tree .
  *= require_self
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
- @import 'swiper/swiper-bundle';
 
  $main_color: orange;
  $sub_color: #fff;
