@@ -64,6 +64,10 @@ class Eatery < ApplicationRecord
     prefecture + city + town + chome + building
   end
 
+  def get_genres
+    genre.split(',').map { |m| m.delete('[]"\\\\') }.reject(&:blank?)
+  end
+
   def self.GenreLists
     @@GenreLists
   end

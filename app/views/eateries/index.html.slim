@@ -26,7 +26,7 @@ br
           = link_to eatery.chome, eatery_path(eatery)
           = link_to eatery.building, eatery_path(eatery)
           br
-          = link_to eatery.genre, eatery_path(eatery), class:"genre btn btn-default"
+          = link_to eatery.get_genres, eatery_path(eatery), class:"genre btn btn-default"
           -if admin_signed_in?
            = link_to "編集", edit_eatery_path(eatery), class:"btn btn-warning"
            = link_to "削除", eatery_path(eatery) ,method: :delete,  data: { confirm: '本当に削除しますか？'}, class:"btn btn-warning"

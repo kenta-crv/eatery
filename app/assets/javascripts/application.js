@@ -14,7 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-//= require swiper.js
+
 
 $(function() {
     $('.navToggle').click(function() {
