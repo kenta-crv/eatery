@@ -10,6 +10,7 @@ class Eatery < ApplicationRecord
   mount_uploader :image_9, ImagesUploader
   mount_uploader :image_10, ImagesUploader
   has_many :reviews, dependent: :destroy
+  belongs_to :user, optional: true
 
   #def to_param
   #  canonical_name ? canonical_name : id.to_s
@@ -65,7 +66,7 @@ class Eatery < ApplicationRecord
   end
 
   def get_genres
-    genre.split(',').map { |m| m.delete('[]"\\\\') }.reject(&:blank?)
+    genre.split(',').map { |m| m.delete('[]"\\\\').strip }.reject(&:blank?)
   end
 
   def self.GenreLists

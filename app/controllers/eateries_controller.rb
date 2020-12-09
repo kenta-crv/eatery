@@ -1,7 +1,7 @@
 class EateriesController < ApplicationController
-  before_action :set_eatery
-  before_action :authenticate_admin!, except: [:index, :show]
-#  before_action :load_eatery, only: [:show, :edit, :update, :destroy]
+    before_action :set_eatery
+    before_action :authenticate_admin!, except: [:index, :show]
+    before_action :load_eatery, only: [:show, :edit, :update, :destroy]
 
     def index
       @q = Eatery.ransack(params[:q])
@@ -27,6 +27,7 @@ class EateriesController < ApplicationController
     def create
       #@eatery = Eatery.find_by_canonical_name_or_id(params[:_canonical_name)
       @eatery = Eatery.new(eatery_params)
+      @eatery.user_id =
       if @eatery.save
         redirect_to new_eatery_review_path(@eatery.id, @review)
       else
@@ -97,7 +98,7 @@ class EateriesController < ApplicationController
         :file,
         #:image_1,
         #:image_2,
-        #:canonical_name
+
         genre: []
         )
     end

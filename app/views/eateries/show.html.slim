@@ -46,7 +46,11 @@ table.company
       tr
         td.arrow_box
           | ジャンル
-        td.center = @eatery.genre
+        /td.center = @eatery.genre
+        td.center
+         - genre = @eatery.get_genres
+         = genres.join(', ')
+
       tr
         td.arrow_box
           | 支払方法
