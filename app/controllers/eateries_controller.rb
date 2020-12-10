@@ -1,12 +1,28 @@
 class EateriesController < ApplicationController
   before_action :set_eatery
   before_action :authenticate_admin!, except: [:index, :show]
-#  before_action :load_eatery, only: [:show, :edit, :update, :destroy]
 
     def index
-      @q = Eatery.ransack(params[:q])
-      @eateries = @q.result
-      @eateries = @eateries.page(params[:page]).per(20).order(created_at: :desc)
+      @type = params[:type]
+      @reviews = @q.result.page(params[:page]).per(20)
+      case @type
+      when "reccomend" then
+        @reviews = Review.published.where(revisit: 1).order("created_at DESC").page(params[:page]).per(20)
+      when "delicious_score" then
+        @reviews = Review.published.order("delicious_score DESC").page(params[:page]).per(20)
+      when "mood_score" then
+        @reviews = Review.published.order("mood_score DESC").page(params[:page]).per(20)
+      when "cost_performance_score" then
+        @reviews = Review.published.order("cost_performance_score DESC").page(params[:page]).per(20)
+      when "service_score" then
+        @reviews = Review.published.order("service_score DESC").page(params[:page]).per(20)
+      when "imagination_score" then
+        @reviews = Review.published.order("imagination_score DESC").page(params[:page]).per(20)
+      when "total_score" then
+        @reviews = Review.published.order("total_score DESC").page(params[:page]).per(20)
+      else
+        @reviews = Review.published.order("created_at DESC").page(params[:page]).per(20)
+      end
       respond_to do |format|
        format.html
        format.csv{ send_data @eateries.generate_csv, filename: "eateries-#{Time.zone.now.strftime('%Y%m%d%S')}.csv" }
@@ -19,7 +35,7 @@ class EateriesController < ApplicationController
 
     def new
     #@eatery = Eatery.find_by_canonical_name_or_id(params[:_canonical_name)
-      @eatery = Eatery.new#(user_id: @current_user.id)
+      @eatery = Eatery.new
     end
 
     def create

@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
-before_action :before_search
+  before_action :before_search
   def before_search
-    @q = Eatery.ransack(params[:q])
-    @eateries = @q.result
+    @q = Review.ransack(params[:q])
+    @reviews = @q.result
+    @reviews = Review.page(params[:page]).per(20)
   end
 
   def set_eatery
