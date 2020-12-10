@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :before_search
+before_action :before_search
   def before_search
     @q = Eatery.ransack(params[:q])
     @eateries = @q.result

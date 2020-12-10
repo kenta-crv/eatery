@@ -1,14 +1,12 @@
 class EateriesController < ApplicationController
-    before_action :set_eatery
-    before_action :authenticate_admin!, except: [:index, :show]
-    before_action :load_eatery, only: [:show, :edit, :update, :destroy]
+  before_action :set_eatery
+  before_action :authenticate_admin!, except: [:index, :show]
+#  before_action :load_eatery, only: [:show, :edit, :update, :destroy]
 
     def index
       @q = Eatery.ransack(params[:q])
       @eateries = @q.result
       @eateries = @eateries.page(params[:page]).per(20).order(created_at: :desc)
-
-      #@eateries = Eatery.all
       respond_to do |format|
        format.html
        format.csv{ send_data @eateries.generate_csv, filename: "eateries-#{Time.zone.now.strftime('%Y%m%d%S')}.csv" }
@@ -21,13 +19,12 @@ class EateriesController < ApplicationController
 
     def new
     #@eatery = Eatery.find_by_canonical_name_or_id(params[:_canonical_name)
-      @eatery = Eatery.new(user_id: @current_user.id)
+      @eatery = Eatery.new#(user_id: @current_user.id)
     end
 
     def create
       #@eatery = Eatery.find_by_canonical_name_or_id(params[:_canonical_name)
       @eatery = Eatery.new(eatery_params)
-      @eatery.user_id =
       if @eatery.save
         redirect_to new_eatery_review_path(@eatery.id, @review)
       else

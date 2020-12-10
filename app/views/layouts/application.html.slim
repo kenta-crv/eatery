@@ -32,11 +32,11 @@ html
    .row
      .col-xs-12.border-line
        .search2.center.height
-        /= search_form_for @q do |f|
-         /= f.search_field :store_cont, type: "text", placeholder: "店名", class:"window"
-         /= f.search_field :prefecture_cont, type: "text", placeholder: "都道府県", class:"window"
-         /= f.search_field :genre_cont, type: "text", placeholder: "ジャンル", class:"window"
-         /= f.submit "検索", class:"submit-button"
+        = search_form_for @q do |f|
+         = f.search_field :store_cont, type: "text", placeholder: "店名", class:"window"
+         = f.search_field :prefecture_cont, type: "text", placeholder: "都道府県", class:"window"
+         = f.search_field :genre_cont, type: "text", placeholder: "ジャンル", class:"window"
+         = f.submit "検索", class:"submit-button"
   br
   body
      /script[src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"]
@@ -46,4 +46,4 @@ html
      script[async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]
      ins.adsbygoogle[style="display:block" data-ad-client="ca-pub-1521725371318355" data-ad-slot="9032977796" data-ad-format="auto" data-full-width-responsive="true"]
      script
-     |  (adsbygoogle = window.adsbygoogle || []).push({}); 
+     |  (adsbygoogle = window.adsbygoogle || []).push({});

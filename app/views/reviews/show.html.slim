@@ -140,4 +140,6 @@ table.company
           strong.label 必須
         td.arrow_box
           | ジャンル
-        td.center = @eatery.genre
+        td.center
+         - genre = @eatery.get_genres
+         = genre.join('・')

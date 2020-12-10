@@ -14,7 +14,7 @@ br
        .row
         .col-sm-1
         .col-sm-3.center
-          = image_tag eatery.image_1.to_s, class:"index-image"
+          = image_tag eatery.reviews.image_1
         .col-sm-8.store_index
           = link_to eatery.store, eatery_path(eatery), class:"store"
           br
@@ -26,7 +26,8 @@ br
           = link_to eatery.chome, eatery_path(eatery)
           = link_to eatery.building, eatery_path(eatery)
           br
-          = link_to eatery.get_genres, eatery_path(eatery), class:"genre btn btn-default"
+          - genre = eatery.get_genres
+          = link_to genre.join('・'), eatery_path(eatery), class:"genre btn btn-default"
           -if admin_signed_in?
            = link_to "編集", edit_eatery_path(eatery), class:"btn btn-warning"
            = link_to "削除", eatery_path(eatery) ,method: :delete,  data: { confirm: '本当に削除しますか？'}, class:"btn btn-warning"
