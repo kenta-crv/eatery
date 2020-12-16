@@ -33,9 +33,9 @@ html
      .col-xs-12.border-line
        .search2.center.height
         = search_form_for @q do |f|
-         = f.search_field :store_cont, type: "text", placeholder: "店名", class:"window"
-         = f.search_field :prefecture_cont, type: "text", placeholder: "都道府県", class:"window"
-         = f.search_field :genre_cont, type: "text", placeholder: "ジャンル", class:"window"
+         = f.search_field :eatery.store_cont, type: "text", placeholder: "店名", class:"window"
+         = f.search_field :eatery.prefecture_cont, type: "text", placeholder: "都道府県", class:"window"
+         = f.search_field :eatery.genre_cont, type: "text", placeholder: "ジャンル", class:"window"
          = f.submit "検索", class:"submit-button"
   br
   body
