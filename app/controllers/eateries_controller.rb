@@ -3,6 +3,9 @@ class EateriesController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
 
     def index
+      @q = Eatery.ransack(params[:q])
+      @eateries = @q.result
+      @eateries = @eateries.page(params[:page]).per(20).order(created_at: :desc)
       @type = params[:type]
       @reviews = @q.result.page(params[:page]).per(20)
       case @type
