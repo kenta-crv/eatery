@@ -96,4 +96,5 @@ gem "jquery-ui-rails"
 gem 'enum_help'
 gem "select2-rails"
 #サイズ調整
-gem 'mini_magick'
+#gem 'mini_magick'
+gem 'rmagick'

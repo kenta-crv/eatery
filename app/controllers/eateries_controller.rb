@@ -1,4 +1,5 @@
 class EateriesController < ApplicationController
+  layout 'eatery'
   before_action :set_eatery
   before_action :authenticate_admin!, except: [:index, :show]
 
@@ -75,10 +76,11 @@ class EateriesController < ApplicationController
       redirect_to eateries_url, notice:"#{cnt}件登録されました。"
     end
 
-    #def review_import
-    #  cnt = Review.review_import(params[:review_file])
-    #  redirect_to eateries_url, notice:"#{cnt}件登録されました。"
-    #endz
+    def set_search
+      @q = Eatery.ransack(params[:q])
+      @eateries = @q.result
+      @eateries = @eateries.all.order(created_at: 'desc')
+    end
 
     private
   #def load_eatery

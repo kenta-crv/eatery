@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+    before_action :set_search
     before_action :set_eatery
     before_action :set_review, only: [:edit, :update, :destroy, :new]
     before_action :set_user
@@ -6,6 +7,7 @@ class ReviewsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
     def index
       @type = params[:type]
+      @q = Eatery.ransack(params[:q])
       @reviews = @q.result.page(params[:page]).per(20)
       case @type
       when "reccomend" then
@@ -81,6 +83,12 @@ class ReviewsController < ApplicationController
 
     def confirm
       @reviews = Review.draft.order("created_at DESC")
+    end
+
+    def set_search
+      @q = Review.ransack(params[:q])
+      @reviews = @q.result
+      @reviews = @reviews.all.order(created_at: 'desc')
     end
 
     private
