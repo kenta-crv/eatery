@@ -7,7 +7,6 @@ class ReviewsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
     def index
       @type = params[:type]
-      @q = Eatery.ransack(params[:q])
       @reviews = @q.result.page(params[:page]).per(20)
       case @type
       when "reccomend" then
@@ -87,6 +86,7 @@ class ReviewsController < ApplicationController
 
     def set_search
       @q = Review.ransack(params[:q])
+      @q = Eatery.ransack(params[:q])
       @reviews = @q.result
       @reviews = @reviews.all.order(created_at: 'desc')
     end

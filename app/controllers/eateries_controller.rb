@@ -1,5 +1,5 @@
 class EateriesController < ApplicationController
-  layout 'eatery'
+  before_action :set_search
   before_action :set_eatery
   before_action :authenticate_admin!, except: [:index, :show]
 
