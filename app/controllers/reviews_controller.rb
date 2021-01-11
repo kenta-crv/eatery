@@ -115,6 +115,7 @@ class ReviewsController < ApplicationController
         :description, #説明
         :body, #本文
         :day,
+        :select,
         :status,
         :image_1, #ファイル
         {image_2: []}

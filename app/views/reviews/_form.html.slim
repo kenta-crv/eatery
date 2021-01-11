@@ -63,6 +63,17 @@
           td
             strong.label 必須
           td.arrow_box
+            | 種別
+          td
+            = f.select(:select,[\
+            ["選択してください","選択してください"],\
+            ["ランチ","ランチ"],\
+            ["ディナー","ディナー"],\
+           ])
+       tr
+          td
+            strong.label 必須
+          td.arrow_box
             | 平均単価
           td
             = f.select(:average_price,[\

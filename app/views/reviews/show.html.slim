@@ -86,6 +86,13 @@ br
         td リピート価値
         td
           = @review.revisit
+      tr
+        td 訪問種別
+        td
+          = @review.select
+        td 料金
+        td
+          = @review.average_price
 
   br
   h1.headline-first.center  = @eatery.store
