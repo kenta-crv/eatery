@@ -82,6 +82,12 @@ class EateriesController < ApplicationController
       @eateries = @eateries.all.order(created_at: 'desc')
     end
 
+    def prefecture
+      @q = Eatery.ransack(params[:q])
+      @eateries = @q.result
+      @eateries = @eateries.page(params[:page]).per(20).order(created_at: :desc)
+    end
+
     private
   #def load_eatery
   #    @eatery = Eatery.find(id: params[:id])

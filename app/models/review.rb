@@ -20,6 +20,7 @@ class Review < ApplicationRecord
       eatery = Eatery.find_by(tel: row["tel"])
       review.attributes = row.to_hash.slice(*review_attributes)
       review.eatery_id = eatery&.id
+      next if self.where(eatery_id: review.eatery.id).where(title: review.title).count > 0
       review.save!
       save_cnt += 1
     end

@@ -11,10 +11,10 @@
 // about supported directives.
 //
 //= require froala_editor.min.js
+//= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-
 
 $(function() {
     $('.navToggle').click(function() {

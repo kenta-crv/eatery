@@ -16,7 +16,7 @@ class Eatery < ApplicationRecord
        eatery = find_by(id: row["id"]) || new
        eatery.attributes = row.to_hash.slice(*updatable_attributes)
        #next if eatery.industry == nil
-       next if self.where(tel: eatery.tel).count > 0
+       next if self.where(store: eatery.store).count > 0
        #next if self.where(tel: eatery.tel).where(industry: eatery.industry).count > 0
        eatery.save!
        save_cont += 1
@@ -48,7 +48,7 @@ class Eatery < ApplicationRecord
     "chef", #シェフ
     "career", #キャリア
     "remarks", #備考
-    "takeout",]
+    "takeout"]
   end
 
   def address
@@ -56,7 +56,7 @@ class Eatery < ApplicationRecord
   end
 
   def get_genres
-    genre.split(',').map { |m| m.delete('[]"\\\\').strip }.reject(&:blank?)
+   #genre.split(',').map { |m| m.delete('[]"\\\\').strip }.reject(&:blank?)
   end
 
   def self.GenreLists

@@ -23,6 +23,7 @@ Rails.application.routes.draw do
      #resources :reviews, param: :visited , except: [:index] #, only: [:show, :edit, :update, :destroy, :confirm, :new]
      resources :reviews, except: [:index] #, only: [:show, :edit, :update, :destroy, :confirm, :new]
    end
+   get '/prefecture' => 'reviews#prefecture'
 
    resources :reviews, only: [:index] do
      collection do

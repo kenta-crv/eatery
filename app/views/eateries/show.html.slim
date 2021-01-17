@@ -48,8 +48,9 @@ table.company
           | ジャンル
         /td.center = @eatery.genre
         td.center
-         - genre = @eatery.get_genres
-         = genre.join('・')
+         -if @eatery.genre.present?
+          - genre = @eatery.get_genres
+          = genre.join('・')
 
       tr
         td.arrow_box
