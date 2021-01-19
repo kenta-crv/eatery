@@ -13,7 +13,7 @@
               = link_to review.title, eatery_review_path(review.eatery.id, review.id), class:"store"
             br
             .description
-             = review.description.to_s.html_safe
+             = review.body.truncate(100).to_s.html_safe
             br
             .center
              - if admin_signed_in?

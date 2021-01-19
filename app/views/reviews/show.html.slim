@@ -149,4 +149,4 @@ table.company
           | ジャンル
         td.center
          - genre = @eatery.get_genres
-         = genre.join('・')
+         = genre&.join('・')

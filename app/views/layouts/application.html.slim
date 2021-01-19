@@ -8,7 +8,7 @@ html
        = link_to "/" do
         = image_tag 'rogo.png',  class:"menu"
      .col-xs-4.col-sm-4
-         select[name="pref" onChange="myfunc(this.value)" class="cp_ipselect cp_sl05"]
+         select#select[class="cp_ipselect cp_sl05"]
            option[disabled selected value]
              | 並び順を変更
            option[value="/reviews?type=reccomend"]
@@ -27,6 +27,7 @@ html
             # | サービスランキング
            #option[value="/reviews?type=imagination_score"]
             # | 創造性ランキング
+
 
      .col-xs-2.col-sm-1
                 .navToggle
