@@ -11,7 +11,7 @@
          td.arrow_box
            | 美味しさ
          td
-           = f.select :delicious_score, Review.ScoreNumbers
+           = f.select :delicious_score, Review.ScoreNumbers, include_blank: true
            |点
        tr
          td
@@ -19,7 +19,7 @@
          td.arrow_box
            | 雰囲気
          td
-           = f.select :mood_score, Review.ScoreNumbers
+           = f.select :mood_score, Review.ScoreNumbers, include_blank: true
            |点
        tr
          td
@@ -27,7 +27,7 @@
          td.arrow_box
            | CP
          td
-           = f.select :cost_performance_score, Review.ScoreNumbers
+           = f.select :cost_performance_score, Review.ScoreNumbers, include_blank: true
            |点
        tr
          td
@@ -35,7 +35,7 @@
          td.arrow_box
            | サービス
          td
-           = f.select :service_score, Review.ScoreNumbers
+           = f.select :service_score, Review.ScoreNumbers, include_blank: true
            |点
        tr
          td
@@ -43,7 +43,7 @@
          td.arrow_box
            | 創造性
          td
-           = f.select :imagination_score, Review.ScoreNumbers
+           = f.select :imagination_score, Review.ScoreNumbers, include_blank: true
            |点
        tr
           td
@@ -66,10 +66,9 @@
             | 種別
           td
             = f.select(:select,[\
-            ["選択してください","選択してください"],\
             ["ランチ","ランチ"],\
             ["ディナー","ディナー"],\
-           ])
+           ], include_blank: true)
        tr
           td
             strong.label 必須
@@ -77,7 +76,6 @@
             | 平均単価
           td
             = f.select(:average_price,[\
-            ["選択してください","選択してください"],\
             ["~￥999","~￥999"],\
             ["￥1000~￥1999","￥1000~￥1999"],\
             ["￥2000~￥2999","￥2000~￥2999"],\
@@ -89,7 +87,7 @@
             ["￥20000~￥29999","￥20000~￥29999"],\
             ["￥30000~￥39999","￥30000~￥39999"],\
             ["￥40000~","￥40000~"],\
-           ])
+           ], include_blank: true)
 
 
 

@@ -14,20 +14,24 @@ br
        .row
         .col-sm-1
         .col-sm-3.center
-        .col-sm-8.store_index
-          = link_to eatery.store, eatery_path(eatery), class:"store"
+        .col-sm-7.store_index
+          = link_to eatery.store, eatery_path(eatery), class:"eatery-store"
           br
-          = link_to eatery.tel, eatery_path(eatery), class:"index-text"
           br
-          = link_to eatery.prefecture, eatery_path(eatery)
-          = link_to eatery.city, eatery_path(eatery)
-          = link_to eatery.town, eatery_path(eatery)
-          = link_to eatery.chome, eatery_path(eatery)
-          = link_to eatery.building, eatery_path(eatery)
+          = link_to eatery.tel, eatery_path(eatery), class:"genre btn btn-default"
+          /-if eatery.genre.present?
+           /- genre = eatery.get_genres
+           /= link_to genre&.join('・'), eatery_path(eatery), class:"genre btn btn-default"
+          = link_to eatery.genre, eatery_path(eatery), class:"genre btn btn-default"
           br
-          -if eatery.genre.present?
-           - genre = eatery.get_genres
-           = link_to genre.join('・'), eatery_path(eatery), class:"genre btn btn-default"
+          br
+          .store-address
+           = link_to eatery.prefecture, eatery_path(eatery)
+           = link_to eatery.city, eatery_path(eatery)
+           = link_to eatery.town, eatery_path(eatery)
+           = link_to eatery.chome, eatery_path(eatery)
+           = link_to eatery.building, eatery_path(eatery)
+          br
           -if admin_signed_in?
            = link_to "編集", edit_eatery_path(eatery), class:"btn btn-warning"
            = link_to "削除", eatery_path(eatery) ,method: :delete,  data: { confirm: '本当に削除しますか？'}, class:"btn btn-warning"

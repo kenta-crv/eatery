@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_11_010246) do
+ActiveRecord::Schema.define(version: 2021_01_20_061730) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2021_01_11_010246) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "canonical_name"
+    t.string "situation"
     t.index ["user_id"], name: "index_eateries_on_user_id"
   end
 
@@ -135,6 +136,7 @@ ActiveRecord::Schema.define(version: 2021_01_11_010246) do
     t.string "image_30"
     t.integer "status", default: 0, null: false
     t.string "select"
+    t.string "situation"
     t.index ["eatery_id"], name: "index_reviews_on_eatery_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end

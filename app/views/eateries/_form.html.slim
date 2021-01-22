@@ -50,6 +50,13 @@
           | ジャンル
         td
           = f.collection_select :genre, Eatery.GenreLists, :first, :first, {prompt: "選択してください"}, {class: 'form-control js-searchable', multiple: true}
+      tr
+        td
+          strong.label 必須
+        td.arrow_box
+          | シチュエーション
+        td
+          = f.collection_select :situation, Eatery.SituationLists, :first, :first, {prompt: "選択してください"}, {class: 'form-control js-searchable', multiple: true}
 
       tr
         td

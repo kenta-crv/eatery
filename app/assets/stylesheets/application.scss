@@ -97,6 +97,16 @@
     margin-top:30px;
     margin-bottom:30px;
   }
+  .eatery-store {
+    padding-left:25px;
+    font-weight:bold;
+    font-size:25px;
+  }
+  .store-address {
+    padding-left:25px;
+    font-size:18px;
+    color:#555;
+  }
 }
 
 
@@ -111,7 +121,7 @@
   }
   .store {
     font-weight:bold;
-    font-size:2rem;
+    font-size:1.6rem;
     @media screen and ( max-width:479px ){font-size:1.8rem;}
   }
   .genre {margin-left:25px;}
@@ -123,6 +133,7 @@
     margin-bottom:30px;
   }
   .description{
+    font-size:1.1rem;
     @media screen and ( max-width:479px ){font-size:1.2rem;}
   }
 }
@@ -182,7 +193,7 @@ margin-top:50px;
  		padding: 0.6em 0.6em;/*文字の上下 左右の余白*/
  		color: $main_color;/*文字色*/
  		background: #fff;/*背景色*/
- 		border-left: solid 5px #666;/*左線*/
+ 		border-left: solid 5px $main_color;/*左線*/
  		border-bottom: solid 3px #d7d7d7;/*下線*/
  		text-align:left;
  		padding-left:30px;
@@ -529,7 +540,7 @@ table.company {
 
 
 .red {
-  font-size:1.8em;
+  font-size:1.5em;
   font-weight:bold;
   color:red;
   @media screen and ( max-width:479px ){font-size:2.0rem;}
@@ -543,3 +554,50 @@ table.company {
 
 .harf {width:45%;}
 .address {width:14%;}
+
+
+/*btn*/
+
+.btn-border {
+  display: inline-block;
+  width: 80%;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  transition: 1.0s;
+  background-color: $main_color;
+  color: #FFF;
+}
+
+.btn-border:hover {
+  border: 2px solid $main_color;
+  color: $main_color;
+  background-color: white;
+}
+
+/*btn*/
+
+.btn-border-tel {
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  transition: 1.0s;
+  background-color: $main_color;
+  color: #FFF;
+}
+
+.btn-border-tel:hover {
+  border: 2px solid $main_color;
+  color: $main_color;
+  background-color: white;
+}

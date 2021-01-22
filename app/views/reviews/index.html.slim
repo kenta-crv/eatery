@@ -2,13 +2,14 @@
 - set_meta_tags  keyword: 'review.eatery.title'
 - set_meta_tags  description: '@review.description'
 
+
 - case @type
-
 - when "reccomend"
-  = render partial: 'index'
-
+ = render partial: 'index'
+- when "hokkaido"
+ = render partial: 'index'
 - else
-  = render partial: 'index'
+ = render partial: 'index'
 
 - if admin_signed_in?
  h2.headline  インポート

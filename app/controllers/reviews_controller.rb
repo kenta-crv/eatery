@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+    before_action :set_prefecture
     before_action :set_search
     before_action :set_eatery
     before_action :set_review, only: [:edit, :update, :destroy, :new]
@@ -23,6 +24,8 @@ class ReviewsController < ApplicationController
         @reviews = Review.published.order("imagination_score DESC").page(params[:page]).per(20)
       when "total_score" then
         @reviews = Review.published.order("total_score DESC").page(params[:page]).per(20)
+    #  when "hokkaido" then
+    #    @eateries = @reviews.where(eatery.prefecture: "北海道").page(params[:page]).per(20)
       else
         @reviews = Review.published.order("created_at DESC").page(params[:page]).per(20)
       end
@@ -90,6 +93,18 @@ class ReviewsController < ApplicationController
       @reviews = @q.result
       @reviews = @reviews.all.order(created_at: 'desc')
     end
+
+    def top
+      #ランダムで行きたい３つを表示
+      @reviews = Review.published.where(revisit: 1).order("RANDOM()").limit(3)
+    end
+
+    def set_prefecture
+      @type = params[:type]
+      @q = Eatery.ransack(params[:q])
+      @eateries = @q.result.page(params[:page]).per(20)
+    end
+
 
     private
     def set_review

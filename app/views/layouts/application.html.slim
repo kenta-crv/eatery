@@ -15,18 +15,18 @@ html
              | おすすめ表示
            option[value="/reviews?type=all"]
              | 全件表示
-           #option[value="/reviews?type=total_score"]
-            # | 総合ランキング
-           #option[value="/reviews?type=delicious_score"]
-            # | 美味ランキング
-           #option[value="/reviews?type=mood_score"]
-            # | ムードランキング
-           #option[value="/reviews?type=cost_performance_score"]
-            # | コスパランキング
-           #option[value="/reviews?type=service_score"]
-            # | サービスランキング
-           #option[value="/reviews?type=imagination_score"]
-            # | 創造性ランキング
+           option[value="/reviews?type=total_score"]
+             | 総合ランキング
+           option[value="/reviews?type=delicious_score"]
+             | 美味ランキング
+           option[value="/reviews?type=mood_score"]
+             | ムードランキング
+           option[value="/reviews?type=cost_performance_score"]
+             | コスパランキング
+           option[value="/reviews?type=service_score"]
+             | サービスランキング
+           option[value="/reviews?type=imagination_score"]
+             | 創造性ランキング
 
 
      .col-xs-2.col-sm-1
@@ -62,11 +62,16 @@ html
         = f.submit "検索", class:"submit-button"
   br
   body
-     /script[src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"]
+   .row
+    .col-sm-12
+     = image_tag "base.png", width:"100%"
+   .row
+    .col-sm-8
      = yield
-     p.notice = notice
-     p.alert = alert
-     script[async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]
-     ins.adsbygoogle[style="display:block" data-ad-client="ca-pub-1521725371318355" data-ad-slot="9032977796" data-ad-format="auto" data-full-width-responsive="true"]
-     script
-     |  (adsbygoogle = window.adsbygoogle || []).push({});
+    .col-sm-4
+     = render template: 'layouts/_sidenavi.html.slim'
+   
+   script[async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]
+   ins.adsbygoogle[style="display:block" data-ad-client="ca-pub-1521725371318355" data-ad-slot="9032977796" data-ad-format="auto" data-full-width-responsive="true"]
+   script
+    |  (adsbygoogle = window.adsbygoogle || []).push({});

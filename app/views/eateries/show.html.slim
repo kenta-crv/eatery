@@ -50,7 +50,7 @@ table.company
         td.center
          -if @eatery.genre.present?
           - genre = @eatery.get_genres
-          = genre.join('・')
+          = genre&.join('・')
 
       tr
         td.arrow_box
@@ -152,6 +152,7 @@ br
   .center
    = link_to "口コミを投稿", new_eatery_review_path(@eatery), class:"btn btn-warning"
 
+
   table.company
    - if @eatery.reviews.any?
     tr
@@ -165,3 +166,10 @@ br
        = review.visited
       td
        = link_to "投稿を見る", eatery_review_path(@eatery, review), class:"btn btn-danger"
+       - if admin_signed_in?
+         = link_to '編集  ', edit_eatery_review_path(@eatery, review.id), class: 'btn btn-warning'
+         = link_to '削除',
+                             eatery_review_path(@eatery ,review.id),
+                             method: :delete,
+                             class: 'btn btn-warning',
+                             data: { confirm: '本当に削除しますか？'}
