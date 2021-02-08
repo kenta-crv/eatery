@@ -1,6 +1,9 @@
 class Eatery < ApplicationRecord
   has_many :reviews, dependent: :destroy
   belongs_to :user, optional: true
+  has_one :last_review, ->{
+    order("created_at desc")
+  },class_name: :Review
 
   #def to_param
   #  canonical_name ? canonical_name : id.to_s
@@ -95,6 +98,7 @@ class Eatery < ApplicationRecord
     ["鰻料理","鰻料理"],
     ["ハンバーグ","ハンバーグ"],
     ["定食","定食"],
+    ["パン","パン"],
     ["お好み焼き・粉物","お好み焼き・粉物"],
     ["その他","その他"],
   ]
@@ -110,7 +114,12 @@ class Eatery < ApplicationRecord
     ["接待","接待"],
     ["フォーマル","フォーマル"],
     ["大人数","大人数"],
-    ["知人・友達と","知人・友達と"],
+    ["カジュアル","カジュアル"],
+    ["食べ歩き","食べ歩き"],
+    ["老舗","老舗"],
+    ["ランチ","ランチ"],
+    ["レストラン","レストラン"],
+    ["お土産","お土産"],
   ]
 
   enum genre_code: { 北海道:0,青森県:1,岩手県:2,宮城県:3,秋田県:4,山形県:5,福島県:6,

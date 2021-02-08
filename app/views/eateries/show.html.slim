@@ -46,12 +46,13 @@ table.company
       tr
         td.arrow_box
           | ジャンル
-        /td.center = @eatery.genre
         td.center
-         -if @eatery.genre.present?
-          - genre = @eatery.get_genres
-          = genre&.join('・')
-
+          = @eatery.genre&.delete('[,],"')
+      tr
+        td.arrow_box
+          | シチュエーション
+        td.center
+          = @eatery.situation&.delete('[,],"')
       tr
         td.arrow_box
           | 支払方法

@@ -31,6 +31,8 @@ Rails.application.routes.draw do
      end
    end
 
+   get 'recommends/gift' => 'recommends#gift'
+
    resources :specials
 
    get 'contact' => 'contact#index'

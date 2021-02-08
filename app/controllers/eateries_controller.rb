@@ -198,7 +198,6 @@ class EateriesController < ApplicationController
         @eateries = Eatery.where(situation: "ファッション").page(params[:page]).per(20)
       when "recommend" then
         @eateries = Eatery.where(situation: "eatery japan recommend").page(params[:page]).per(20)
-
       else
         @reviews = Review.published.order("created_at DESC").page(params[:page]).per(20)
       end

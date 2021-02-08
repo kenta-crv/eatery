@@ -148,5 +148,11 @@ table.company
         td.arrow_box
           | ジャンル
         td.center
-         - genre = @eatery.get_genres
-         = genre&.join('・')
+         = @eatery.genre&.delete('[,],"')
+      tr
+        td
+          strong.label 必須
+        td.arrow_box
+          | シチュエーション
+        td.center
+         = @eatery.situation&.delete('[,],"')

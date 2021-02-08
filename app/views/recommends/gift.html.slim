@@ -1,15 +1,15 @@
+- set_meta_tags  title: '@review.title'
+- set_meta_tags  keyword: 'review.eatery.title'
+- set_meta_tags  description: '@review.description'
+
 .index-wrapper
       h1.headline
-        | eatery japan レコメンドレストラン
+        | eatery japan 絶対喜ばれるお土産ランキング
       - @reviews.each do |review|
         .row
           .col-sm-1
-          .col-sm-4.center.put
+          .col-sm-4.center
             = image_tag review.image_1.to_s, class:"index-image", width:"80%"
-            p.prefecture
-             = review.eatery.prefecture
-            p.genre
-             = review.eatery.genre&.delete('[,],"')
           .col-sm-6.store_review
             .review-title
               = link_to review.title, eatery_review_path(review.eatery.id, review.id), class:"store"
@@ -64,7 +64,3 @@
                      | 点
         br
         hr
-.row
- .col-xs-5
- .col-xl-7
-   = paginate(@reviews)

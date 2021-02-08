@@ -122,4 +122,5 @@ class Review < ApplicationRecord
   enum status: {draft: 0, published: 1}
   #has_one_attached :image
   #has_rich_text :body
+
 end

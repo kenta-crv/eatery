@@ -601,3 +601,34 @@ table.company {
   color: $main_color;
   background-color: white;
 }
+
+/*画像を乗せる*/
+
+.put {/*親div*/
+  position: relative;/*相対配置*/
+  }
+
+.put p.prefecture {
+  position: absolute;/*絶対配置*/
+  color: white;/*文字は白に*/
+  font-weight: bold;
+  top: 0;
+  left: 0;
+  background-color:rgba(238, 120, 0, 0.7);
+  padding:2px 10px;
+  }
+
+.put p.genre {
+  position: absolute;/*絶対配置*/
+  color: white;/*文字は白に*/
+  font-weight: bold;
+  top: 0;
+  right: 0;
+  max-width:50%;
+  background-color:rgba(238, 120, 0, 0.7);
+  padding:2px 10px;
+  }
+
+.put img {
+  width: 100%;
+  }

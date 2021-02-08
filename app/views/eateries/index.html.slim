@@ -14,15 +14,13 @@ br
        .row
         .col-sm-1
         .col-sm-3.center
+          = image_tag eatery.last_review.image_1
         .col-sm-7.store_index
           = link_to eatery.store, eatery_path(eatery), class:"eatery-store"
           br
           br
           = link_to eatery.tel, eatery_path(eatery), class:"genre btn btn-default"
-          /-if eatery.genre.present?
-           /- genre = eatery.get_genres
-           /= link_to genre&.join('・'), eatery_path(eatery), class:"genre btn btn-default"
-          = link_to eatery.genre, eatery_path(eatery), class:"genre btn btn-default"
+          = link_to eatery.genre&.delete('[,],"'), eatery_path(eatery), class:"genre btn btn-default"
           br
           br
           .store-address
