@@ -47,6 +47,10 @@ class Review < ApplicationRecord
     "visited"]
   end
 
+  def last_review
+    self.reviews.last
+  end
+
   @@ScoreNumbers = [
 50,
 49,

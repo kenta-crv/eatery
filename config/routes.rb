@@ -31,7 +31,7 @@ Rails.application.routes.draw do
      end
    end
 
-   get 'recommends/gift' => 'recommends#gift'
+   get '/recommends' => 'recommends#index'
 
    resources :specials
 

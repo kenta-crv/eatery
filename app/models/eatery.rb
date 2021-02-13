@@ -1,10 +1,9 @@
 class Eatery < ApplicationRecord
   has_many :reviews, dependent: :destroy
+  mount_uploader :image_1, FilesUploader
   belongs_to :user, optional: true
-  has_one :last_review, ->{
-    order("created_at desc")
-  },class_name: :Review
-
+  #has_one :last_review, ->{
+  #order("created_at desc") },class_name: :Review
   #def to_param
   #  canonical_name ? canonical_name : id.to_s
   #end
@@ -52,6 +51,10 @@ class Eatery < ApplicationRecord
     "career", #キャリア
     "remarks", #備考
     "takeout"]
+  end
+
+  def last_review
+    self.reviews.last
   end
 
   def address
