@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_20_061730) do
+ActiveRecord::Schema.define(version: 2021_02_13_155226) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -80,6 +80,15 @@ ActiveRecord::Schema.define(version: 2021_01_20_061730) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["eatery_id"], name: "index_eaterists_on_eatery_id"
+  end
+
+  create_table "releases", force: :cascade do |t|
+    t.string "title"
+    t.string "file"
+    t.string "description"
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -186,6 +195,19 @@ ActiveRecord::Schema.define(version: 2021_01_20_061730) do
     t.string "image_10"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "subtitles", force: :cascade do |t|
+    t.integer "release_id"
+    t.integer "user_id"
+    t.string "title"
+    t.string "file"
+    t.string "description"
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["release_id"], name: "index_subtitles_on_release_id"
+    t.index ["user_id"], name: "index_subtitles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

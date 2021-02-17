@@ -1,0 +1,43 @@
+- set_meta_tags  title: @release.title
+- set_meta_tags  description: @release.description
+br
+br
+#release-detail.tops-wrapper
+   h1.headline-first  = @release.title
+   br
+   br
+     .center
+      = image_tag @release.file.to_s, width:"80%"
+      br
+      br
+	  p#book_content  = @release.body.html_safe
+
+
+
+- if admin_signed_in?
+
+ br
+  h2.headline
+    | レビュー
+  .center
+   = link_to "食材を投稿", new_release_subtitle_path(@release), class:"btn btn-warning"
+
+
+  table.company
+   - if @release.subtitles.any?
+    tr
+      th[colspan="3"]
+        | 食材一覧
+   - @release.subtitles.each do |subtitle|
+    tr
+      td
+       = subtitle.title
+      td
+       = link_to "投稿を見る", release_subtitle_path(@release, subtitle), class:"btn btn-danger"
+       - if admin_signed_in?
+         = link_to '編集  ', edit_release_subtitle_path(@release, subtitle.id), class: 'btn btn-warning'
+         = link_to '削除',
+                             release_subtitle_path(@release ,subtitle.id),
+                             method: :delete,
+                             class: 'btn btn-warning',
+                             data: { confirm: '本当に削除しますか？'}

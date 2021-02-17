@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'releases/index'
    #管理者アカウント
    devise_for :admins, controllers: {
      registrations: 'admins/registrations',
@@ -29,6 +30,10 @@ Rails.application.routes.draw do
        post :review_import
        get :'confirm'
      end
+   end
+
+   resources :releases do
+     resources :subtitles
    end
 
    get '/recommends' => 'recommends#index'

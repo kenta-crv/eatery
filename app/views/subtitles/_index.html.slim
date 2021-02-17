@@ -1,0 +1,70 @@
+.index-wrapper
+      h1.headline
+        | release japan レコメンドレストラン
+      - @subtitles.each do |subtitle|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag subtitle.image_1.to_s, class:"index-image", width:"80%"
+            p.prefecture
+             = subtitle.release.prefecture
+            p.genre
+             = subtitle.release.genre&.delete('[,],"')
+          .col-sm-6.store_subtitle
+            .subtitle-title
+              = link_to subtitle.title, release_subtitle_path(subtitle.release.id, subtitle.id), class:"store"
+            br
+            .description
+             = subtitle.description.to_s.html_safe
+            br
+            .center
+             - if admin_signed_in?
+               = link_to '編集  ', edit_release_subtitle_path(subtitle.release.id, subtitle.id), class: 'btn btn-warning'
+               = link_to '削除',
+                                   release_subtitle_path(subtitle.release.id ,subtitle.id),
+                                   method: :delete,
+                                   class: 'btn btn-warning',
+                                   data: { confirm: '本当に削除しますか？'}
+        br
+        .row
+         .col-sm-12
+             table.company.center
+               tbody
+                tr
+                  th
+                     | 美味しさ
+                  th
+                     | 雰囲気
+                  th
+                     | CP
+                  th
+                     | サービス
+                  th
+                     | 創造性
+                  th.subtitle-index-text
+                     | 総合点
+                tr
+                  td.red
+                    = subtitle.delicious_score
+                    | 点
+                  td.red
+                     = subtitle.mood_score
+                     | 点
+                  td.red
+                     = subtitle.cost_performance_score
+                     | 点
+                  td.red
+                     = subtitle.service_score
+                     | 点
+                  td.red
+                     = subtitle.imagination_score
+                     | 点
+                  td.red
+                     = subtitle.total_score
+                     | 点
+        br
+        hr
+.row
+ .col-xs-5
+ .col-xl-7
+   = paginate(@subtitles)

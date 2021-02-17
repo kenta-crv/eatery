@@ -1,11 +1,18 @@
 class ApplicationController < ActionController::Base
-
   def set_eatery
     @current_eatery = Eatery.find_by(id: params[:eatery_id])
   end
 
   def current_eatery
     @current_eatery
+  end
+
+  def set_release
+    @current_release = Release.find_by(id: params[:release_id])
+  end
+
+  def current_release
+    @current_release
   end
 
   def set_user
