@@ -13,12 +13,11 @@ br
       - @eateries.find_each do |eatery|
        .row
         .col-sm-1
-        .col-sm-3.center
-        - image_path = eatery.last_review.try(:image_1)
+        .col-sm-4.put2.index-image
+         - image_path = eatery.last_review.try(:image_2).first
          - if image_path.present?
-          = image_tag image_path
+          = image_tag eatery.last_review.image_2.first.to_s
          - else
-          |No Photo
         .col-sm-7.store_index
           = link_to eatery.store, eatery_path(eatery), class:"eatery-store"
           br

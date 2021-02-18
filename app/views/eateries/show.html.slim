@@ -2,16 +2,21 @@
 - set_meta_tags  keyword: '東京　テイクアウト,= @eatery.eatery'
 - set_meta_tags  description: '東京のテイクアウト情報を知るならeatery japan'
 br
-br
 .tops-wrapper
-br
-br
   h2.headline
     = @eatery.store
 br
-.center
- = image_tag @eatery.image_1.to_s, width: "50%"
+.center.put3
+ - image_path = @eatery.last_review.try(:image_2).first
+ - if image_path.present?
+  = image_tag @eatery.last_review.image_2.first.to_s
+ - else
+ br
+ br
+ - @eatery.reviews.each do |review|
+  = link_to "投稿を見る", eatery_review_path(@eatery, review), class:"btn btn-warning"
 
+br
 table.company
    colgroup
      col width="10%"
@@ -22,10 +27,6 @@ table.company
         td.arrow_box
           | 店舗名
         td.center = @eatery.store
-      tr
-        td.arrow_box
-          | テンポメイ
-        td.center = @eatery.store_kana
       tr
         td.arrow_box
           | URL
@@ -53,97 +54,7 @@ table.company
           | シチュエーション
         td.center
           = @eatery.situation&.delete('[,],"')
-      tr
-        td.arrow_box
-          | 支払方法
-        td.center = @eatery.payment
-      tr
-        td.arrow_box
-          | ランチ単価
-        td.center = @eatery.price_lunch
-      tr
-        td.arrow_box
-          | ディナー単価
-        td.center = @eatery.price_dinner
-      tr
-        td.arrow_box
-          | 営業時間
-        td.center = @eatery.hour
-      tr
-        td.arrow_box
-          | 定休日
-        td.center = @eatery.holiday
-      tr
-        td.arrow_box
-          | 難易度
-        td.center = @eatery.difficulty
-      tr
-        td.arrow_box
-          | 予約方法
-        td.center = @eatery.bookking
-      tr
-        td.arrow_box
-          | 席数
-        td.center = @eatery.sit
-      tr
-        td.arrow_box
-          | オープン日
-        td.center = @eatery.open
-      tr
-        td.arrow_box
-          | シェフ
-        td.center = @eatery.chef
-      tr
-        td.arrow_box
-          | キャリア
-        td.center = @eatery.career
-      tr
-        td.arrow_box
-          | 備考
-        td.center = @eatery.remarks
-      tr
-        td.arrow_box
-          | テイクアウト
-        td.center = @eatery.takeout
 
-br
-br
-.row.center
- .col-sm-1
- .col-sm-5
-    = image_tag @eatery.image_2.to_s, width:"90%"
- .col-sm-5
-    = image_tag @eatery.image_3.to_s, width:"90%"
- .col-sm-1
-.row.center
- .col-sm-1
- .col-sm-5
-    = image_tag @eatery.image_4.to_s, width:"90%"
- .col-sm-5
-    = image_tag @eatery.image_5.to_s, width:"90%"
- .col-sm-1
-.row.center
- .col-sm-1
- .col-sm-5
-    = image_tag @eatery.image_6.to_s, width:"90%"
- .col-sm-5
-    = image_tag @eatery.image_7.to_s, width:"90%"
- .col-sm-1
-.row.center
- .col-sm-1
- .col-sm-5
-    = image_tag @eatery.image_8.to_s, width:"90%"
- .col-sm-5
-    = image_tag @eatery.image_9.to_s, width:"90%"
- .col-sm-1
-.row.center
- .col-sm-1
- .col-sm-5
-    = image_tag @eatery.image_10.to_s, width:"90%"
- .col-sm-5
- .col-sm-1
-br
-br
 
 - if admin_signed_in?
 
