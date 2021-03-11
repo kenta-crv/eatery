@@ -14,9 +14,9 @@ br
        .row
         .col-sm-1
         .col-sm-4.put2.index-image
-         - image_path = eatery.last_review.try(:image_2).first
+         - image_path = eatery.last_review.try(:image_1)
          - if image_path.present?
-          = image_tag eatery.last_review.image_2.first.to_s
+          = image_tag eatery.last_review.image_1.to_s
          - else
         .col-sm-7.store_index
           = link_to eatery.store, eatery_path(eatery), class:"eatery-store"
