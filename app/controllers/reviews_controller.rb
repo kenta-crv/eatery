@@ -5,7 +5,6 @@ class ReviewsController < ApplicationController
     before_action :set_review, only: [:edit, :update, :destroy, :new]
     before_action :set_user
     #before_action :set_review, only: [:show,:edit,:update,:destroy]
-    before_action :authenticate_user!, except: [:index, :show]
     def index
       @type = params[:type]
       @reviews = @q.result.page(params[:page]).per(20)
@@ -24,6 +23,101 @@ class ReviewsController < ApplicationController
         @reviews = Review.published.order("imagination_score DESC").page(params[:page]).per(20)
       when "total_score" then
         @reviews = Review.published.order("total_score DESC").page(params[:page]).per(20)
+      when "hokkaido" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "北海道").page(params[:page]).per(20)
+      when "aomori" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "青森県").page(params[:page]).per(20)
+      when "akita" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "秋田県").page(params[:page]).per(20)
+      when "iwate" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "岩手県").page(params[:page]).per(20)
+      when "yamagata" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "山形県").page(params[:page]).per(20)
+      when "miyagi" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "宮城県").page(params[:page]).per(20)
+      when "fukushima" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "福島県").page(params[:page]).per(20)
+      when "ibaraki" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "茨城県").page(params[:page]).per(20)
+      when "tochigi" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "栃木県").page(params[:page]).per(20)
+      when "gunma" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "群馬県").page(params[:page]).per(20)
+      when "tokyo" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "東京都").page(params[:page]).per(20)
+      when "kanagawa" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "神奈川県").page(params[:page]).per(20)
+      when "saitama" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "埼玉県").page(params[:page]).per(20)
+      when "chiba" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "千葉県").page(params[:page]).per(20)
+      when "niigata" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "新潟県").page(params[:page]).per(20)
+      when "yamanashi" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "山梨県").page(params[:page]).per(20)
+      when "nagano" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "長野県").page(params[:page]).per(20)
+      when "ishikawa" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "石川県").page(params[:page]).per(20)
+      when "toyama" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "富山県").page(params[:page]).per(20)
+      when "fukui" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "福井県").page(params[:page]).per(20)
+      when "shizuoka" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "静岡県").page(params[:page]).per(20)
+      when "aichi" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "愛知県").page(params[:page]).per(20)
+      when "gifu" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "岐阜県").page(params[:page]).per(20)
+      when "mie" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "三重県").page(params[:page]).per(20)
+      when "wakayama" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "和歌山県").page(params[:page]).per(20)
+      when "nara" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "奈良県").page(params[:page]).per(20)
+      when "shiga" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "滋賀県").page(params[:page]).per(20)
+      when "kyoto" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "京都府").page(params[:page]).per(20)
+      when "osaka" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "大阪府").page(params[:page]).per(20)
+      when "hyogo" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "兵庫県").page(params[:page]).per(20)
+      when "okayama" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "岡山県").page(params[:page]).per(20)
+      when "hiroshima" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "広島県").page(params[:page]).per(20)
+      when "tottori" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "鳥取県").page(params[:page]).per(20)
+      when "shimane" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "島根県").page(params[:page]).per(20)
+      when "yamaguchi" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "山口県").page(params[:page]).per(20)
+      when "kouchi" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "高知県").page(params[:page]).per(20)
+      when "ehime" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "愛媛県").page(params[:page]).per(20)
+      when "tokushima" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "徳島県").page(params[:page]).per(20)
+      when "kagawa" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "香川県").page(params[:page]).per(20)
+      when "fukuoka" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "福岡県").page(params[:page]).per(20)
+      when "ooita" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "大分県").page(params[:page]).per(20)
+      when "saga" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "佐賀県").page(params[:page]).per(20)
+      when "nagasaki" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "長崎県").page(params[:page]).per(20)
+      when "kumamoto" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "熊本県").page(params[:page]).per(20)
+      when "miyazaki" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "宮崎県").page(params[:page]).per(20)
+      when "kagoshima" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "鹿児島県").page(params[:page]).per(20)
+      when "okinawa" then
+        @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "沖縄県").page(params[:page]).per(20)
+
     #  when "hokkaido" then
     #    @eateries = @reviews.where(eatery.prefecture: "北海道").page(params[:page]).per(20)
       else

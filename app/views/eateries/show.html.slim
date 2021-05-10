@@ -1,16 +1,16 @@
-- set_meta_tags  title: '東京のテイクアウト = @eatery.eatery | eatery japan'
-- set_meta_tags  keyword: '東京　テイクアウト,= @eatery.eatery'
-- set_meta_tags  description: '東京のテイクアウト情報を知るならeatery japan'
+- set_meta_tags title: "#{@eatery.prefecture}#{@eatery.city}で美味しいグルメなら#{@eatery.store}|eatery japan"
+- set_meta_tags description: "#{@eatery.prefecture}#{@eatery.city}で美味しいグルメなら#{@eatery.store}。eatery japanでは、全国各地の有名店から穴場店までのおすすめ店のレビューを掲載しています。"
+
 br
 .tops-wrapper
   h2.headline
     = @eatery.store
 br
 .center.put3
- - image_path = @eatery.last_review.try(:image_2).first
- - if image_path.present?
-  = image_tag @eatery.last_review.image_2.first.to_s
- - else
+ /- image_path = @eatery.last_review.try(:image_2).first
+ /- if image_path.present?
+  /= image_tag @eatery.last_review.image_2.first.to_s
+ /- else
  br
  br
  - @eatery.reviews.each do |review|

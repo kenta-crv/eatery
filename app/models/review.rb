@@ -5,6 +5,13 @@ class Review < ApplicationRecord
   mount_uploaders :image_2, ImagesUploader
   serialize :image_2, JSON
 
+  #def total_score
+  #  (delicious_score.to_i + mood_score.to_i + cost_performance_score.to_i + service_score.to_i + imagination_score.to_i) / 5
+  #end
+
+  scope :with_total_score, ->{ select("*, delicious_score + mood_score + cost_performance_score + service_score + imagination_score as total_score") }
+
+
 #  def to_param
   #  visited ? visited : id.to_s
   #end
