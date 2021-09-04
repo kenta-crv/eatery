@@ -13,15 +13,40 @@ br
  /- else
  br
  br
- - @eatery.reviews.each do |review|
-  = link_to "投稿を見る", eatery_review_path(@eatery, review), class:"btn btn-warning"
+
+
+ br
+  h2.headline
+    | レビュー
+  .center
+   = link_to "口コミを投稿", new_eatery_review_path(@eatery), class:"btn btn-warning"
+
+
+  table.company
+   - if @eatery.reviews.any?
+    tr
+      th[colspan="3"]
+        | レビュー一覧
+   - @eatery.reviews.each do |review|
+    tr
+      td
+       = review.title
+      td
+       = review.visited
+      td
+       = link_to "投稿を見る", eatery_review_path(@eatery, review), class:"btn btn-danger"
+       - if admin_signed_in?
+         = link_to '編集  ', edit_eatery_review_path(@eatery, review.id), class: 'btn btn-warning'
+         = link_to '削除',
+                             eatery_review_path(@eatery ,review.id),
+                             method: :delete,
+                             class: 'btn btn-warning',
+                             data: { confirm: '本当に削除しますか？'}
+
 
 br
 table.company
    colgroup
-     col width="10%"
-     col width="20%"
-     col width="70%"
      tbody
       tr
         td.arrow_box
@@ -57,31 +82,3 @@ table.company
 
 
 - if admin_signed_in?
-
- br
-  h2.headline
-    | レビュー
-  .center
-   = link_to "口コミを投稿", new_eatery_review_path(@eatery), class:"btn btn-warning"
-
-
-  table.company
-   - if @eatery.reviews.any?
-    tr
-      th[colspan="3"]
-        | レビュー一覧
-   - @eatery.reviews.each do |review|
-    tr
-      td
-       = review.title
-      td
-       = review.visited
-      td
-       = link_to "投稿を見る", eatery_review_path(@eatery, review), class:"btn btn-danger"
-       - if admin_signed_in?
-         = link_to '編集  ', edit_eatery_review_path(@eatery, review.id), class: 'btn btn-warning'
-         = link_to '削除',
-                             eatery_review_path(@eatery ,review.id),
-                             method: :delete,
-                             class: 'btn btn-warning',
-                             data: { confirm: '本当に削除しますか？'}

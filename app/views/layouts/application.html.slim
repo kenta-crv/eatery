@@ -30,14 +30,14 @@ html
              | 創造性ランキング
 
 
-     .col-xs-2.col-sm-1
+     /.col-xs-2.col-sm-1
                 .navToggle
                   span
                   span
                   span
                   span menu
 
-     nav.globalMenuSp
+     /nav.globalMenuSp
            ul
             li
               = link_to  'トップページ', '/' , class: "col-md"
@@ -68,9 +68,9 @@ html
     .col-sm-12
      = image_tag "base.png", width:"100%"
    .row
-    .col-sm-8
+    .col-sm-12
      = yield
-    .col-sm-4
+    /.col-sm-4
      = render template: 'layouts/_sidenavi.html.slim'
 
    script[async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]
