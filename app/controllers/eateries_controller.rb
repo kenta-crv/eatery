@@ -169,11 +169,7 @@ class EateriesController < ApplicationController
     end
 
 
-    private
-  #def load_eatery
-  #    @eatery = Eatery.find(id: params[:id])
-  #  end
-
+  private
     def eatery_params
       params.require(:eatery).permit(
         :store, #店舗名
