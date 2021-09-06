@@ -43,4 +43,6 @@ Rails.application.routes.draw do
    get 'contact' => 'contact#index'
    post 'confirm' =>'contact#confirm'
    post 'thanks' => 'contact#thanks'
+
+   get '*path', controller: "application", action: 'render_404'
 end

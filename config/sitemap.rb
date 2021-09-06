@@ -26,6 +26,6 @@ add "/" , changefreq: 'daily', priority: 1.0
 
   add reviews_path, :priority => 1.0, :changefreq => 'daily'
   Review.find_each do |review|
-    add review_path(review), :lastmod => review.updated_at
+    add eatery_reviews_path(review), :lastmod => review.updated_at
   end
 end
