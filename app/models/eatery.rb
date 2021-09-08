@@ -2,6 +2,10 @@ class Eatery < ApplicationRecord
   has_many :reviews, dependent: :destroy
   mount_uploader :image_1, FilesUploader
   belongs_to :user, optional: true
+
+  validates :store, uniqueness: true
+  validates :tel, uniqueness: true
+  validates :address, uniqueness: true
   #has_one :last_review, ->{
   #order("created_at desc") },class_name: :Review
   #def to_param
