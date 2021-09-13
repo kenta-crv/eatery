@@ -10,7 +10,7 @@ class Review < ApplicationRecord
   #  (delicious_score.to_i + mood_score.to_i + cost_performance_score.to_i + service_score.to_i + imagination_score.to_i) / 5
   #end
 
-  scope :with_total_score, ->{ select("*, delicious_score + mood_score + cost_performance_score + service_score + imagination_score as total_score") }
+  scope :with_total_score, ->{ select("reviews.*, delicious_score + mood_score + cost_performance_score + service_score + imagination_score as total_score") }
 
 
 #  def to_param
