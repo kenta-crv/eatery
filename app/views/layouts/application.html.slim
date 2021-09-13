@@ -4,11 +4,11 @@ html
     = render template: 'layouts/_header.html.slim'
   header
    .row
-     .col-xs-6.col-sm-7
+     .col-xs-6.col-sm-8
        = link_to "/" do
         = image_tag 'rogo.png',  class:"menu"
      -if @eatery
-      .col-xs-4.col-sm-4
+      .col-xs-4.col-sm-3
          select#select[class="cp_ipselect cp_sl05"]
            option[disabled selected value]
              | 並び順を変更
@@ -62,7 +62,8 @@ html
         = f.search_field :genre_cont, type: "text", placeholder: "ジャンル", class:"window"
         = f.submit "検索", class:"submit-button"
   br
-
+  br
+  br
   body
    .row
     .col-sm-12
