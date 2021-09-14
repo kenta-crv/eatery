@@ -128,7 +128,7 @@ class Review < ApplicationRecord
   end
 
   def total_score
-    (delicious_score.to_i + mood_score.to_i  + cost_performance_score.to_i  + service_score.to_i  + imagination_score.to_i )/5
+    (delicious_score.to_i + mood_score.to_i  + cost_performance_score.to_i  + service_score.to_i  + imagination_score.to_i )
   end
 
   enum status: {draft: 0, published: 1}

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'releases/index'
+   get 'releases/index'
    #管理者アカウント
    devise_for :admins, controllers: {
      registrations: 'admins/registrations',
