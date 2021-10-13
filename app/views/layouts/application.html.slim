@@ -70,8 +70,17 @@ html
      = yield
     .col-sm-4
      = render template: 'layouts/_sidenavi.html.slim'
-
+   br
    script[async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]
    ins.adsbygoogle[style="display:block" data-ad-client="ca-pub-1521725371318355" data-ad-slot="9032977796" data-ad-format="auto" data-full-width-responsive="true"]
    script
     |  (adsbygoogle = window.adsbygoogle || []).push({});
+
+/-if admin_signed_in?
+/    .center
+/      = search_form_for @q do |f|
+/        = f.search_field :body_cont, type: "text", placeholder: "キーワード", class:"window"
+/        = f.date_field :visited_gteq
+/        = f.date_field :visited_lteq
+/        = f.submit "検索", class:"submit-button"
+/-else

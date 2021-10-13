@@ -54,5 +54,7 @@ br
             = file_field_tag :file
           th
             = submit_tag "インポート",  class: 'btn btn-default'
+          th
+            = link_to 'エクスポート', eateries_path(format: :csv),  class: 'btn btn-default'
 br
 br

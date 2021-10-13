@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
-    before_action :set_prefecture
+    #before_action :set_prefecture
     before_action :set_search
-    before_action :set_eatery
+    #before_action :set_eatery
     before_action :set_review, only: [:edit, :update, :destroy, :new]
     before_action :set_user
     #before_action :set_review, only: [:show,:edit,:update,:destroy]
@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
       when "imagination_score" then
         @reviews = Review.published.order("imagination_score DESC").page(params[:page]).per(20)
       when "total_score" then
-        @reviews = Review.published.order("total_score DESC").page(params[:page]).per(20)
+        @reviews = Review.published.order("(delicious_score + mood_score  + cost_performance_score  + service_score  + imagination_score) DESC").page(params[:page]).per(20)
       when "hokkaido" then
         @reviews = Review.published.with_total_score.order("total_score DESC").joins(:eatery).where("eateries.prefecture": "北海道").page(params[:page]).per(20)
       when "aomori" then
@@ -126,12 +126,13 @@ class ReviewsController < ApplicationController
     end
 
     def show
-      @eatery = Eatery.find(params[:eatery_id])
-      @review = Review.find_by(id: params[:id], eatery_id: @eatery.id)
+      @review = Review.find(params[:id])
+      #@eatery = Eatery.find(params[:eatery_id])
+      #@review = Review.find_by(id: params[:id], eatery_id: @eatery.id)
     end
 
     def new
-      @review = @current_eatery.reviews.build
+      @review = Review.new
       #@review = Review.new
       #@eatery = Eatery.find(params[:eatery_id])
     end
@@ -183,7 +184,6 @@ class ReviewsController < ApplicationController
 
     def set_search
       @q = Review.ransack(params[:q])
-      @q = Eatery.ransack(params[:q])
       @reviews = @q.result
       @reviews = @reviews.all.order(created_at: 'desc')
     end
@@ -202,11 +202,21 @@ class ReviewsController < ApplicationController
 
     private
     def set_review
-      @review = @current_eatery.reviews.find_by(id: params[:id])
+      @review = Review.find_by(id: params[:id])
     end
 
     def review_params
       params.require(:review).permit(
+        :store, #店舗名
+        :store_kana,
+        :url, #URL
+        :tel, #電話番号
+        :prefecture,
+        :city,
+        :town,
+        :chome,
+        :building,
+
         :delicious_score, #美味しさ
         :mood_score, #ムードスコア
         :cost_performance_score, #コストパフォーマンススコア
@@ -216,6 +226,7 @@ class ReviewsController < ApplicationController
         :original1_score, #旅行、デート、お酒、素材、独創性、の質等、様々なブログジャンルを確立出来る
         :original2,
         :original2_score, #旅行、デート、お酒、素材、独創性、の質等、様々なブログジャンルを確立出来る
+        :total_score,
         :revisit, #再訪したいレベルか？
         :visited,
         :average_price, #平均金額
@@ -227,7 +238,9 @@ class ReviewsController < ApplicationController
         :select,
         :status,
         :image_1, #ファイル
-        {image_2: []}
+        {image_2: [],
+        situation: [],
+        genre: [],}
         )
     end
 end

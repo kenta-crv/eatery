@@ -5,6 +5,10 @@ class Review < ApplicationRecord
   mount_uploaders :image_2, ImagesUploader
   serialize :image_2, JSON
 
+  before_validation :set_total_score do
+    self.total_score = delicious_score + mood_score + cost_performance_score + service_score + imagination_score
+  end
+
   #validate :title, uniqueness: true
   #def total_score
   #  (delicious_score.to_i + mood_score.to_i + cost_performance_score.to_i + service_score.to_i + imagination_score.to_i) / 5

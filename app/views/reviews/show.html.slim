@@ -94,7 +94,7 @@ br
           = @review.average_price
 
   br
-  h1.headline-first.center  = @eatery.store
+  h1.headline-first.center  = @review.store
   .fr-view
        .body-base  = @review.body.html_safe
 
@@ -111,47 +111,47 @@ table.company
           strong.label 必須
         td.arrow_box
           | 店舗名
-        td.center = @eatery.store
+        td.center = @review.store
       tr
         td
           strong.label 必須
         td.arrow_box
           | テンポメイ
-        td.center = @eatery.store_kana
+        td.center = @review.store_kana
       tr
         td
           strong.label 必須
         td.arrow_box
           | URL
-        td.center = @eatery.url
+        td.center = @review.url
       tr
         td
           strong.label 必須
         td.arrow_box
           | 電話番号
-        td.center = @eatery.tel
+        td.center = @review.tel
       tr
         td
           strong.label 必須
         td.arrow_box
           | 住所
         td.center
-          = @eatery.prefecture
-          = @eatery.city
-          = @eatery.town
-          = @eatery.chome
-          = @eatery.building
+          = @review.prefecture
+          = @review.city
+          = @review.town
+          = @review.chome
+          = @review.building
       tr
         td
           strong.label 必須
         td.arrow_box
           | ジャンル
         td.center
-         = @eatery.genre&.delete('[,],"')
+         = @review.genre&.delete('[,],"')
       tr
         td
           strong.label 必須
         td.arrow_box
           | シチュエーション
         td.center
-         = @eatery.situation&.delete('[,],"')
+         = @review.situation&.delete('[,],"')

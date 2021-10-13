@@ -157,10 +157,11 @@ class EateriesController < ApplicationController
     end
 
     def set_search
-      @q = Eatery.ransack(params[:q])
-      @eateries = @q.result
-      @eateries = @eateries.all.order(created_at: 'desc')
+      @q = Review.ransack(params[:q])
+      @reviews = @q.result
+      @reviews = @reviews.all.order(created_at: 'desc')
     end
+
 
     def prefecture
       @q = Eatery.ransack(params[:q])

@@ -13,16 +13,16 @@
               = image_tag review.image_1.to_s, class:"index-image"
             .col-sm-6.store_review
               .review-title
-                = link_to review.title, eatery_review_path(review.eatery.id, review.id), class:"store"
+                = link_to review.title, review_path(review.id), class:"store"
               br
               .description
                = review.description.to_s.html_safe
               br
               .center
                - if admin_signed_in?
-                 = link_to '編集  ', edit_eatery_review_path(review.eatery.id, review.id), class: 'btn btn-warning'
+                 = link_to '編集  ', edit_review_path(review.id), class: 'btn btn-warning'
                  = link_to '削除',
-                                     eatery_review_path(review.eatery.id ,review.id),
+                                     review_path(review.id),
                                      method: :delete,
                                      class: 'btn btn-warning',
                                      data: { confirm: '本当に削除しますか？'}
@@ -66,6 +66,6 @@
           br
           hr
 .row
-    .col-xs-9
-    .col-xs-3
+    .col-sm-9.col-xs-6
+    .col-sm-3.col-xs-6
      = link_to "もっとみる", reviews_path , class:"btn btn-warning"

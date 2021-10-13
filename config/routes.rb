@@ -18,14 +18,14 @@ Rails.application.routes.draw do
    resources :eateries do#, only: [:show, :edit, :update, :destroy] do
      collection do
        post :import
-       #post :review_import
+       post :review_import
      end
-     #resources :reviews, param: :visited , except: [:index] #, only: [:show, :edit, :update, :destroy, :confirm, :new]
+     resources :reviews, param: :visited , except: [:index] #, only: [:show, :edit, :update, :destroy, :confirm, :new]
      resources :reviews, except: [:index] #, only: [:show, :edit, :update, :destroy, :confirm, :new]
    end
    get '/prefecture' => 'reviews#prefecture'
 
-   resources :reviews, only: [:index] do
+   resources :reviews do#, only: [:index] do
      collection do
        post :review_import
        get :'confirm'

@@ -1,4 +1,73 @@
- = form_for([@current_eatery, @review], html: { multipart: true }) do |f|
+ = form_for(@review, html: { multipart: true }) do |f|
+   h2.headline  店舗情報
+   table.company
+    colgroup
+      col width="10%"
+      col width="20%"
+      col width="70%"
+      tbody
+       tr
+         td
+           strong.label 必須
+         td.arrow_box
+           | 店舗名（テンポメイ）
+         td
+           = text_field :eatery, :store, class:"harf"
+           |（
+           = text_field :eatery, :store_kana, class:"harf"
+           |）
+       tr
+         td
+           strong.label.label-blue 任意
+         td.arrow_box
+           | URL
+         td = url_field :eatery, :url
+       tr
+         td
+           strong.label 必須
+         td.arrow_box
+           | 電話番号
+         td = phone_field :eatery, :tel
+       tr
+         td
+           strong.label 必須
+         td.arrow_box
+           | 住所
+         td
+           |(県)
+           = text_field :eatery, :prefecture, class: "address"
+           |(市)
+           = text_field :eatery, :city, class: "address"
+           |(町)
+           = text_field :eatery, :town, class: "address"
+           |(番地)
+           = text_field :eatery, :chome, class: "address"
+           |(ビル)
+           = text_field :eatery, :building, class: "address"
+       tr
+         td
+           strong.label 必須
+         td.arrow_box
+           | ジャンル
+         td
+           = f.collection_select :genre, Eatery.GenreLists, :first, :first, {prompt: "選択してください"}, {class: 'form-control js-searchable', multiple: true}
+       tr
+         td
+           strong.label 必須
+         td.arrow_box
+           | シチュエーション
+         td
+           = f.collection_select :situation, Eatery.SituationLists, :first, :first, {prompt: "選択してください"}, {class: 'form-control js-searchable', multiple: true}
+
+       tr
+         td
+           strong.label.label-blue 任意
+         td.arrow_box
+           | メイン画像
+         td
+           = f.file_field :image_1
+
+   h2.headline レビュー
    table.company
     colgroup
       col width="10%"

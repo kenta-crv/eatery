@@ -29,6 +29,7 @@ class Eatery < ApplicationRecord
       end
       save_cont
   end
+
   def self.updatable_attributes
     [
     "store", #店舗名
@@ -55,6 +56,20 @@ class Eatery < ApplicationRecord
     "career", #キャリア
     "remarks", #備考
     "takeout"]
+  end
+
+#customer_export
+  def self.generate_csv
+    CSV.generate(headers:true) do |csv|
+      csv << csv_attributes
+      all.each do |task|
+        csv << csv_attributes.map{|attr| task.send(attr)}
+      end
+    end
+  end
+
+  def self.csv_attributes
+    ["store","store_kana","url","tel","prefecture","city","town","chome","building","file","situation","genre"]
   end
 
   def last_review

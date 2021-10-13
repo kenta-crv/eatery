@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_13_155226) do
+ActiveRecord::Schema.define(version: 2021_10_07_062100) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -145,7 +145,21 @@ ActiveRecord::Schema.define(version: 2021_02_13_155226) do
     t.string "image_30"
     t.integer "status", default: 0, null: false
     t.string "select"
+    t.integer "total_score"
+    t.integer "store"
+    t.integer "store_kana"
+    t.integer "url"
+    t.integer "tel"
+    t.integer "prefecture"
+    t.integer "city"
+    t.integer "town"
+    t.integer "chome"
+    t.integer "building"
+    t.integer "genre"
     t.string "situation"
+    t.integer "price_lunch"
+    t.integer "price_dinner"
+    t.integer "remarks"
     t.index ["eatery_id"], name: "index_reviews_on_eatery_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
