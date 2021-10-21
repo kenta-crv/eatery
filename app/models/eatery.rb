@@ -69,7 +69,7 @@ class Eatery < ApplicationRecord
   end
 
   def self.csv_attributes
-    ["store","store_kana","url","tel","prefecture","city","town","chome","building","file","situation","genre"]
+    ["store","store_kana","url","tel","prefecture","city","town","chome","building","file","situation","genre","id"]
   end
 
   def last_review
