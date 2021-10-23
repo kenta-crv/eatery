@@ -15,14 +15,14 @@ Rails.application.routes.draw do
 
    root to: 'reviews#top'
    #resources :eateries, param: :canonical_name do#, only: [:show, :edit, :update, :destroy] do
-   resources :eateries do#, only: [:show, :edit, :update, :destroy] do
-     collection do
-       post :import
-       post :review_import
-     end
-     resources :reviews, param: :visited , except: [:index] #, only: [:show, :edit, :update, :destroy, :confirm, :new]
-     resources :reviews, except: [:index] #, only: [:show, :edit, :update, :destroy, :confirm, :new]
-   end
+   #resources :eateries do#, only: [:show, :edit, :update, :destroy] do
+    # collection do
+    #   post :import
+    #   post :review_import
+     #end
+     #resources :reviews, param: :visited , except: [:index] #, only: [:show, :edit, :update, :destroy, :confirm, :new]
+     #resources :reviews, except: [:index] #, only: [:show, :edit, :update, :destroy, :confirm, :new]
+   #end
    get '/prefecture' => 'reviews#prefecture'
 
    resources :reviews do#, only: [:index] do
