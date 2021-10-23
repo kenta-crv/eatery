@@ -24,8 +24,13 @@ add "/" , changefreq: 'daily', priority: 1.0
   #  add eatery_path(eatery), :lastmod => eatery.updated_at
   #end
 
+  #add reviews_path, :priority => 1.0, :changefreq => 'daily'
+  #Review.find_each do |review|
+    #add eatery_review_path(review.eatery.id, review.id), :lastmod => review.updated_at
+  #end
+
   add reviews_path, :priority => 1.0, :changefreq => 'daily'
   Review.find_each do |review|
-    add eatery_review_path(review.eatery.id, review.id), :lastmod => review.updated_at
+    add review_path(review.id), :lastmod => review.updated_at
   end
 end

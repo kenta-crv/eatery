@@ -138,15 +138,7 @@ class ReviewsController < ApplicationController
     end
 
     def create
-      #@eatery = Eatery.find(params[:eatery_id])
-      #@review = Review.new(review_params)
-      #if @review.save
-      #  redirect_to reviews_path
-      #else
-      #  render 'new'
-      #end
-      @review = @current_eatery.reviews.build(review_params)
-      #if @review = @eatery.reviews.create(review_params)
+      @review = Review.new(review_params)
       if @review.save
         redirect_to reviews_path
       else
@@ -216,7 +208,6 @@ class ReviewsController < ApplicationController
         :town,
         :chome,
         :building,
-
         :delicious_score, #美味しさ
         :mood_score, #ムードスコア
         :cost_performance_score, #コストパフォーマンススコア

@@ -25,7 +25,7 @@ Rails.application.routes.draw do
    #end
    get '/prefecture' => 'reviews#prefecture'
 
-   resources :reviews do#, only: [:index] do
+   resources :reviews do
      collection do
        post :review_import
        get :'confirm'
