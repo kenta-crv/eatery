@@ -127,12 +127,14 @@ class ReviewsController < ApplicationController
 
     def show
       @review = Review.find(params[:id])
+      render :layout => "slider"
       #@eatery = Eatery.find(params[:eatery_id])
       #@review = Review.find_by(id: params[:id], eatery_id: @eatery.id)
     end
 
     def new
       @review = Review.new
+      render :layout => "froala"
       #@review = Review.new
       #@eatery = Eatery.find(params[:eatery_id])
     end

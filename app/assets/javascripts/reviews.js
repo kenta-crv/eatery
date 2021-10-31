@@ -10,28 +10,5 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
-$(function() {
-    $('.navToggle').click(function() {
-        $(this).toggleClass('active');
-
-        if ($(this).hasClass('active')) {
-            $('.globalMenuSp').addClass('active');
-        } else {
-            $('.globalMenuSp').removeClass('active');
-        }
-    });
-});
-
-
-window.onload = function() {
-    // select変更時
-    document.getElementById('select').onchange = function() {
-        // 遷移先URL取得
-        var url = this.options[this.selectedIndex].value;
-        // URLが取得できていればページ遷移
-        if(url != '') {
-            location.href = url;
-        }
-    };
-};
+//= require froala_editor.min.js
+//= require_tree .
