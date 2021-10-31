@@ -1,6 +1,6 @@
 class EateriesController < ApplicationController
-  before_action :set_search
-  before_action :set_eatery
+  #before_action :set_search
+  #before_action :set_eatery
   before_action :authenticate_admin!, except: [:index, :show]
 
     def index

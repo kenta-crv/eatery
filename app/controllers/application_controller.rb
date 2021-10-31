@@ -21,18 +21,18 @@ class ApplicationController < ActionController::Base
    end
 
    def set_search
-     @q = Eatery.ransack(params[:q])
-     @eateries = @q.result
-     @eateries = @eateries.all.order(created_at: 'desc')
+     @q = Review.ransack(params[:q])
+     @reviews = @q.result
+     @reviews = @reviews.all.order(created_at: 'desc')
    end
 
-  def set_eatery
-    @current_eatery = Eatery.find_by(id: params[:eatery_id])
-  end
+  #def set_review
+  #  @current_review = Review.find_by(id: params[:review_id])
+  #end
 
-  def current_eatery
-    @current_eatery
-  end
+  #def current_review
+  #  @current_review
+  #end
 
   def set_release
     @current_release = Release.find_by(id: params[:release_id])

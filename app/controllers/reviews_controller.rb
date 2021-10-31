@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
     #before_action :set_prefecture
-    before_action :set_search
+    #before_action :set_search
     #before_action :set_eatery
     before_action :set_review, only: [:edit, :update, :destroy, :new]
     before_action :set_user
@@ -121,7 +121,7 @@ class ReviewsController < ApplicationController
     #  when "hokkaido" then
     #    @eateries = @reviews.where(eatery.prefecture: "北海道").page(params[:page]).per(20)
       else
-        @reviews = Review.published.order("created_at DESC").page(params[:page]).per(20)
+        @reviews = @q.result.page(params[:page]).where(status: "published").order("created_at DESC").per(20)
       end
     end
 
@@ -172,12 +172,6 @@ class ReviewsController < ApplicationController
 
     def confirm
       @reviews = Review.draft.order("created_at DESC")
-    end
-
-    def set_search
-      @q = Review.ransack(params[:q])
-      @reviews = @q.result
-      @reviews = @reviews.all.order(created_at: 'desc')
     end
 
     def top

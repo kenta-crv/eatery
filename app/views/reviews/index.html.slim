@@ -24,5 +24,48 @@
           = submit_tag "インポート",  class: 'btn btn-default'
         th
           = link_to 'エクスポート', reviews_path(format: :csv), class: 'btn btn-default'
-br
-br
+ br
+ br
+- if admin_signed_in?
+ h2.headline  ワーカー向け検索条件
+ = search_form_for @q do |f|
+          table.company[width="90%"]
+            col[width="20%"]
+            col[width="30%"]
+            col[width="20%"]
+            col[width="30%"]
+            tbody
+              tr
+                th[colspan="4"]
+                  | 検索
+              tr
+                th
+                  | 店舗名
+                td
+                  = f.search_field :store_cont, type: "text"
+                th
+                  | ジャンル
+                td
+                  = f.search_field :genre_cont, type: "text"
+              tr
+                th
+                  | 都道府県
+                td
+                  = f.search_field :prefecture_cont, type: "text"
+                th
+                  | 市町村
+                td
+                  = f.search_field :city_cont, type: "text"
+              tr
+                th
+                  | 訪問日（最初）
+                td
+                  = f.date_field :visited_gteq, class: 'date-picker form-control'
+                th
+                  | 訪問日（最後）
+                td
+                  = f.date_field :visited_lteq, class: 'date-picker form-control'
+              tr
+                th[colspan="4"]
+                 .center
+                  = f.submit '検索'
