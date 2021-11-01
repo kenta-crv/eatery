@@ -225,9 +225,9 @@ class ReviewsController < ApplicationController
         :select,
         :status,
         :image_1, #ファイル
-        {image_2: [],
+        image_2: [],
         situation: [],
-        genre: [],}
+        genre: []
         )
     end
 end
