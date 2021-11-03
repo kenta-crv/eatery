@@ -1,6 +1,6 @@
 .index-wrapper
  h1.headline
-  | エリア別検索
+  | エリア別ランキング検索
 .row.center
  .col-xs-12
   .btn-border[data-toggle="modal" data-target="#Tohoku"]
@@ -61,11 +61,17 @@
   | ハッシュタグ
 .row.center
   = link_to "デート", reviews_path(type: "date", created_at: "[desc]"), class:"btn-border"
-  = link_to "ランチ", reviews_path(type: "lunch", created_at: "[desc]"), class:"btn-border"
+  = link_to "おしゃれ", reviews_path(type: "fashion", created_at: "[desc]"), class:"btn-border"
+  = link_to "一人で入りやすい", reviews_path(type: "onry", created_at: "[desc]"), class:"btn-border"
+  = link_to "接待", reviews_path(type: "formal", created_at: "[desc]"), class:"btn-border"
+  = link_to "大人数", reviews_path(type: "many", created_at: "[desc]"), class:"btn-border"
   = link_to "カジュアル", reviews_path(type: "casual", created_at: "[desc]"), class:"btn-border"
-  = link_to "フォーマル", reviews_path(type: "fomal", created_at: "[desc]"), class:"btn-border"
-  = link_to "お洒落", reviews_path(type: "fashion", created_at: "[desc]"), class:"btn-border"
-  = link_to "eatery japan recommend", reviews_path(type: "recommend", created_at: "[desc]"), class:"btn-border"
+  = link_to "食べ歩き", reviews_path(type: "walk", created_at: "[desc]"), class:"btn-border"
+  = link_to "老舗", reviews_path(type: "old", created_at: "[desc]"), class:"btn-border"
+  = link_to "カジュアル", reviews_path(type: "casual", created_at: "[desc]"), class:"btn-border"
+  = link_to "ランチ", reviews_path(type: "lunch", created_at: "[desc]"), class:"btn-border"
+  = link_to "レストラン", reviews_path(type: "restaurant", created_at: "[desc]"), class:"btn-border"
+  = link_to "お土産", reviews_path(type: "souvenir", created_at: "[desc]"), class:"btn-border"
 
 
 #Tohoku.modal.fade[tabindex="-1" role="dialog" aria-labelledby="dialogHeader" aria-hidden="true"]
