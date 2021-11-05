@@ -37,3 +37,11 @@ window.onload = function() {
         }
     };
 };
+
+
+$(function() {
+  $('td')
+  .filter((_, td) => $(td).text().match(/(\b|\D)([12][0-9]?|3[0-8]?|[4-9])(\b|\D)/))
+  .css("color", "black")
+  .css("font-weight", "normal")
+});
