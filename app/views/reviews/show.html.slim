@@ -1,13 +1,20 @@
-- set_meta_tags  title: @review.title
-- set_meta_tags  description: @review.description
+- set_meta_tags title: "#{@review.prefecture}#{@review.city}のおすすめグルメ！#{@review.title}|eatery japan"
+- set_meta_tags description: "#{@review.prefecture}#{@review.city}のおすすめグルメなら#{@review.store}！eatery japanは、全国2500店舗を訪問した奥山健太が厳選したお店のみを掲載しています。"
+
+
 br
 br
 br
 
 #review-detail
-  = link_to "一覧に戻る", reviews_path, class:"btn btn-warning"
+  = link_to "#{@review.prefecture}#{@review.city}のおすすめグルメ一覧に戻る", reviews_path, class:"btn btn-warning"
   .fr-view
-	  h1.headline-first  = @review.title
+	  h1.headline-first
+           = @review.title
+           .lebel
+            = @review.prefecture
+            = @review.city
+            | おすすめグルメ
   - if admin_signed_in?
    table.company
     tr
