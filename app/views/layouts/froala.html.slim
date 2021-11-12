@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    = render template: 'layouts/_froala.html.slim'
+    = render template: 'layouts/_header.html.slim'
   header
    .row
      .col-xs-6.col-sm-8
@@ -14,9 +14,9 @@ html
            option[value="/reviews?type=all"]
              | 全件表示
            option[value="/reviews?type=total_score"]
-             | 総合ランキング
+             | 総合グルメランキング
            option[value="/reviews?type=delicious_score"]
-             | 美味ランキング
+             | 美味グルメランキング
            option[value="/reviews?type=mood_score"]
              | ムードランキング
            option[value="/reviews?type=cost_performance_score"]
@@ -27,23 +27,23 @@ html
              | 創造性ランキング
 
 
-     .col-xs-2.col-sm-1
-                .navToggle
-                  span
-                  span
-                  span
-                  span menu
+     /.col-xs-2.col-sm-1
+                /.navToggle
+                /  span
+                /  span
+                /  span
+                /  span menu
 
-     nav.globalMenuSp
-           ul
-            li
-              = link_to  'トップページ', '/' , class: "col-md"
-            li
-              = link_to  '都道府県別おすすめ店', '/lists' , :class=>"col-md"
-            li
-              = link_to  'おすすめ店一覧', '/posts' , :class=>"col-md"
-            li
-              = link_to  '問い合わせ', '/contact' , :class=>"col-md"
+     /nav.globalMenuSp
+          / ul
+          /  li
+          /    = link_to  'トップページ', '/' , class: "col-md"
+          /  li
+          /    = link_to  '都道府県別おすすめ店', '/lists' , :class=>"col-md"
+          /  li
+          /    = link_to  'おすすめ店一覧', '/posts' , :class=>"col-md"
+          /  li
+          /    = link_to  '問い合わせ', '/contact' , :class=>"col-md"
 
 
 

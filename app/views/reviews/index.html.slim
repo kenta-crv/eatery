@@ -66,6 +66,11 @@
                 td
                   = f.date_field :visited_lteq, class: 'date-picker form-control'
               tr
+                th
+                  | 本文
+                td[colspan="3"]
+                  = f.search_field :body_cont, type: "text"
+              tr
                 th[colspan="4"]
                  .center
                   = f.submit '検索'
