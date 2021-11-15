@@ -1,6 +1,6 @@
 .index-wrapper
       h1.headline
-        | eatery japan 
+        | eatery japan
         = @headline
       - @reviews.each do |review|
         .row
@@ -22,10 +22,10 @@
              - if admin_signed_in?
                = link_to '編集  ', edit_review_path(review.id), class: 'btn btn-warning'
                = link_to '削除',
-                                   review_path(review.id),
-                                   method: :delete,
-                                   class: 'btn btn-warning',
-                                   data: { confirm: '本当に削除しますか？'}
+                review_path(review),
+                method: :delete,
+                class: 'btn btn-warning',
+                data: { confirm: '本当に削除しますか？'}
         br
         .row
          .col-sm-12

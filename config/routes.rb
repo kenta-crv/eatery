@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-   get 'releases/index'
-   #管理者アカウント
    devise_for :admins, controllers: {
      registrations: 'admins/registrations',
      sessions: 'admins/sessions'
@@ -23,7 +21,7 @@ Rails.application.routes.draw do
      #resources :reviews, param: :visited , except: [:index] #, only: [:show, :edit, :update, :destroy, :confirm, :new]
      #resources :reviews, except: [:index] #, only: [:show, :edit, :update, :destroy, :confirm, :new]
    #end
-   get '/prefecture' => 'reviews#prefecture'
+   #get '/prefecture' => 'reviews#prefecture'
 
    resources :reviews do
      collection do
@@ -31,14 +29,6 @@ Rails.application.routes.draw do
        get :'confirm'
      end
    end
-
-   resources :releases do
-     resources :subtitles
-   end
-
-   get '/recommends' => 'recommends#index'
-
-   resources :specials
 
    get 'contact' => 'contact#index'
    post 'confirm' =>'contact#confirm'

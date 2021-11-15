@@ -1,10 +1,5 @@
 class ReviewsController < ApplicationController
-    #before_action :set_prefecture
-    #before_action :set_search
-    #before_action :set_Review.published.order("(delicious_score + mood_score  + cost_performance_score  + service_score  + imagination_score) DESC")
-    before_action :set_review, only: [:edit, :update, :destroy, :new]
     before_action :set_user
-    #before_action :set_review, only: [:show,:edit,:update,:destroy]
     def index
       @type = params[:type]
       @reviews = @q.result.page(params[:page]).per(20)
@@ -339,7 +334,7 @@ class ReviewsController < ApplicationController
     def destroy
       @review = Review.find(params[:id])
       @review.destroy
-       redirect_to reviews_path
+      redirect_to reviews_path
     end
 
     def update
@@ -373,9 +368,6 @@ class ReviewsController < ApplicationController
 
 
     private
-    def set_review
-      @review = Review.find_by(id: params[:id])
-    end
 
     def review_params
       params.require(:review).permit(
