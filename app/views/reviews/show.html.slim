@@ -7,7 +7,12 @@ br
 br
 
 #review-detail
-  = link_to "#{@review.prefecture}#{@review.city}のおすすめグルメ一覧に戻る", reviews_path, class:"btn btn-warning"
+  .row
+   .col-sm-4= link_to "おすすめグルメ一覧に戻る", reviews_path, class:"btn btn-warning"
+   .col-sm-4
+   .col-sm-4
+    .btn.btn-danger
+     | #{@review.prefecture}#{@review.city}#{@review.town}のおすすめグルメ
   .fr-view
 	  h1.headline-first
            = @review.title
@@ -98,7 +103,8 @@ br
           = @review.average_price
 
   br
-  h1.headline-first.center  = @review.store
+  h1.headline-first.center
+   | 【#{@review.prefecture}#{@review.city}#{@review.town}】#{@review.store}
   .fr-view
        .body-base  = @review.body.html_safe
 
@@ -159,3 +165,9 @@ table.company
           | シチュエーション
         td.center
          = @review.situation&.delete('[,],"')
+
+.row
+ .col-sm-4
+ .col-sm-4
+  .btn.btn-danger
+   | #{@review.prefecture}#{@review.city}#{@review.town}のおすすめグルメ
