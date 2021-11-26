@@ -304,6 +304,7 @@ class ReviewsController < ApplicationController
     end
 
     def show
+      @reviews = Review.all
       @review = Review.find(params[:id])
       render :layout => "slider"
       #@Review.published.order("(delicious_score + mood_score  + cost_performance_score  + service_score  + imagination_score) DESC") = Review.published.order("(delicious_score + mood_score  + cost_performance_score  + service_score  + imagination_score) DESC").find(params[:Review.published.order("(delicious_score + mood_score  + cost_performance_score  + service_score  + imagination_score) DESC")_id])

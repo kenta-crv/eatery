@@ -772,3 +772,29 @@ table.company {
  .c{
    width :250px;
  }
+
+ footer {
+     width:100%;
+
+     background-color:#FFF0CF;
+     padding:30px;
+     text-align:center;
+     margin:0 auto 0;
+
+    .underline{
+      border-bottom: 1px solid #999; /* 下側の1本線 */
+      width:100%;
+      padding-left:30px;
+      padding-bottom:10px;
+      margin-bottom:20px;
+    }
+
+    ul {
+     display:inline-block;
+    }
+
+    li {
+       text-align:left;
+       padding:3px 25px ;
+    }
+ }

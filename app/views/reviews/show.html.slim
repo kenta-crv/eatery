@@ -171,3 +171,7 @@ table.company
  .col-sm-4
   .btn.btn-danger
    | #{@review.prefecture}#{@review.city}#{@review.town}のおすすめグルメ
+
+-if @review.prefecture = "熊本県"
+ - @reviews.each do |review|
+  = review.where(prefecture:"熊本県")
