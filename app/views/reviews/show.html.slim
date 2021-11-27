@@ -166,12 +166,12 @@ table.company
         td.center
          = @review.situation&.delete('[,],"')
 
-.row
- .col-sm-4
- .col-sm-4
-  .btn.btn-danger
-   | #{@review.prefecture}#{@review.city}#{@review.town}のおすすめグルメ
+/.row
+/ .col-sm-4
+/ .col-sm-4
+/  .btn.btn-danger
+/   | #{@review.prefecture}#{@review.city}#{@review.town}のおすすめグルメ
 
--if @review.prefecture = "熊本県"
- - @reviews.each do |review|
-  = review.where(prefecture:"熊本県")
+/-if @review.prefecture = "熊本県"
+ /- @reviews.each do |review|
+  /= review.where(prefecture:"熊本県")
