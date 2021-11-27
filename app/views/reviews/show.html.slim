@@ -166,12 +166,138 @@ table.company
         td.center
          = @review.situation&.delete('[,],"')
 
-/.row
-/ .col-sm-4
-/ .col-sm-4
-/  .btn.btn-danger
-/   | #{@review.prefecture}#{@review.city}#{@review.town}のおすすめグルメ
+br
 
-/-if @review.prefecture = "熊本県"
- /- @reviews.each do |review|
-  /= review.where(prefecture:"熊本県")
+h2.headline
+
+   | #{@review.prefecture}のおすすめグルメ
+
+br
+br
+
+- if @review.prefecture == "北海道"
+  - @reviews.where(prefecture:"北海道").order("RANDOM()").limit(5).each do |review|
+    .row
+      .col-sm-1
+      .col-sm-4.center.put
+        = image_tag review.image_1.to_s, class:"index-image"
+        p.prefecture
+         = review.prefecture
+        p.genre
+         = review.genre&.delete('[,],"')
+      .col-sm-6.store_review
+        .review-title
+          = link_to review.title, review_path(review.id), class:"store"
+        br
+        .description
+         = review.description.to_s.html_safe
+    br
+    hr
+- elsif @review.prefecture == "青森県"
+  - @reviews.where(prefecture:"青森県").order("RANDOM()").limit(5).each do |review|
+    .row
+      .col-sm-1
+      .col-sm-4.center.put
+        = image_tag review.image_1.to_s, class:"index-image"
+        p.prefecture
+         = review.prefecture
+        p.genre
+         = review.genre&.delete('[,],"')
+      .col-sm-6.store_review
+        .review-title
+          = link_to review.title, review_path(review.id), class:"store"
+        br
+        .description
+         = review.description.to_s.html_safe
+    br
+    hr
+- elsif @review.prefecture == "秋田県"
+  - @reviews.where(prefecture:"秋田県").order("RANDOM()").limit(5).each do |review|
+    .row
+      .col-sm-1
+      .col-sm-4.center.put
+        = image_tag review.image_1.to_s, class:"index-image"
+        p.prefecture
+         = review.prefecture
+        p.genre
+         = review.genre&.delete('[,],"')
+      .col-sm-6.store_review
+        .review-title
+          = link_to review.title, review_path(review.id), class:"store"
+        br
+        .description
+         = review.description.to_s.html_safe
+    br
+    hr
+- elsif @review.prefecture == "岩手県"
+  - @reviews.where(prefecture:"岩手県").order("RANDOM()").limit(5).each do |review|
+    .row
+      .col-sm-1
+      .col-sm-4.center.put
+        = image_tag review.image_1.to_s, class:"index-image"
+        p.prefecture
+         = review.prefecture
+        p.genre
+         = review.genre&.delete('[,],"')
+      .col-sm-6.store_review
+        .review-title
+          = link_to review.title, review_path(review.id), class:"store"
+        br
+        .description
+         = review.description.to_s.html_safe
+    br
+    hr
+- elsif @review.prefecture == "福島県"
+  - @reviews.where(prefecture:"福島県").order("RANDOM()").limit(5).each do |review|
+    .row
+      .col-sm-1
+      .col-sm-4.center.put
+        = image_tag review.image_1.to_s, class:"index-image"
+        p.prefecture
+         = review.prefecture
+        p.genre
+         = review.genre&.delete('[,],"')
+      .col-sm-6.store_review
+        .review-title
+          = link_to review.title, review_path(review.id), class:"store"
+        br
+        .description
+         = review.description.to_s.html_safe
+    br
+    hr
+- elsif @review.prefecture == "宮城県"
+  - @reviews.where(prefecture:"宮城県").order("RANDOM()").limit(5).each do |review|
+    .row
+      .col-sm-1
+      .col-sm-4.center.put
+        = image_tag review.image_1.to_s, class:"index-image"
+        p.prefecture
+         = review.prefecture
+        p.genre
+         = review.genre&.delete('[,],"')
+      .col-sm-6.store_review
+        .review-title
+          = link_to review.title, review_path(review.id), class:"store"
+        br
+        .description
+         = review.description.to_s.html_safe
+    br
+    hr
+- elsif @review.prefecture == "山形県"
+  - @reviews.where(prefecture:"山形県").order("RANDOM()").limit(5).each do |review|
+    .row
+      .col-sm-1
+      .col-sm-4.center.put
+        = image_tag review.image_1.to_s, class:"index-image"
+        p.prefecture
+         = review.prefecture
+        p.genre
+         = review.genre&.delete('[,],"')
+      .col-sm-6.store_review
+        .review-title
+          = link_to review.title, review_path(review.id), class:"store"
+        br
+        .description
+         = review.description.to_s.html_safe
+    br
+    hr

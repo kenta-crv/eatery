@@ -11,7 +11,7 @@
 // about supported directives.
 //= require froala_editor.min.js
 //= require bootstrap-sprockets
-
+//= require rails-ujs
 //= require_tree .
 //
 
