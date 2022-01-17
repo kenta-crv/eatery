@@ -194,110 +194,830 @@ br
     br
     hr
 - elsif @review.prefecture == "青森県"
-  - @reviews.where(prefecture:"青森県").order("RANDOM()").limit(5).each do |review|
-    .row
-      .col-sm-1
-      .col-sm-4.center.put
-        = image_tag review.image_1.to_s, class:"index-image"
-        p.prefecture
-         = review.prefecture
-        p.genre
-         = review.genre&.delete('[,],"')
-      .col-sm-6.store_review
-        .review-title
-          = link_to review.title, review_path(review.id), class:"store"
+      - @reviews.where(prefecture:"青森県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
         br
-        .description
-         = review.description.to_s.html_safe
-    br
-    hr
+        hr
 - elsif @review.prefecture == "秋田県"
-  - @reviews.where(prefecture:"秋田県").order("RANDOM()").limit(5).each do |review|
-    .row
-      .col-sm-1
-      .col-sm-4.center.put
-        = image_tag review.image_1.to_s, class:"index-image"
-        p.prefecture
-         = review.prefecture
-        p.genre
-         = review.genre&.delete('[,],"')
-      .col-sm-6.store_review
-        .review-title
-          = link_to review.title, review_path(review.id), class:"store"
+      - @reviews.where(prefecture:"秋田県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
         br
-        .description
-         = review.description.to_s.html_safe
-    br
-    hr
+        hr
 - elsif @review.prefecture == "岩手県"
-  - @reviews.where(prefecture:"岩手県").order("RANDOM()").limit(5).each do |review|
-    .row
-      .col-sm-1
-      .col-sm-4.center.put
-        = image_tag review.image_1.to_s, class:"index-image"
-        p.prefecture
-         = review.prefecture
-        p.genre
-         = review.genre&.delete('[,],"')
-      .col-sm-6.store_review
-        .review-title
-          = link_to review.title, review_path(review.id), class:"store"
+      - @reviews.where(prefecture:"岩手県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
         br
-        .description
-         = review.description.to_s.html_safe
-    br
-    hr
+        hr
 - elsif @review.prefecture == "福島県"
-  - @reviews.where(prefecture:"福島県").order("RANDOM()").limit(5).each do |review|
-    .row
-      .col-sm-1
-      .col-sm-4.center.put
-        = image_tag review.image_1.to_s, class:"index-image"
-        p.prefecture
-         = review.prefecture
-        p.genre
-         = review.genre&.delete('[,],"')
-      .col-sm-6.store_review
-        .review-title
-          = link_to review.title, review_path(review.id), class:"store"
+      - @reviews.where(prefecture:"福島県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
         br
-        .description
-         = review.description.to_s.html_safe
-    br
-    hr
+        hr
 - elsif @review.prefecture == "宮城県"
-  - @reviews.where(prefecture:"宮城県").order("RANDOM()").limit(5).each do |review|
-    .row
-      .col-sm-1
-      .col-sm-4.center.put
-        = image_tag review.image_1.to_s, class:"index-image"
-        p.prefecture
-         = review.prefecture
-        p.genre
-         = review.genre&.delete('[,],"')
-      .col-sm-6.store_review
-        .review-title
-          = link_to review.title, review_path(review.id), class:"store"
+      - @reviews.where(prefecture:"宮城県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
         br
-        .description
-         = review.description.to_s.html_safe
-    br
-    hr
+        hr
 - elsif @review.prefecture == "山形県"
-  - @reviews.where(prefecture:"山形県").order("RANDOM()").limit(5).each do |review|
-    .row
-      .col-sm-1
-      .col-sm-4.center.put
-        = image_tag review.image_1.to_s, class:"index-image"
-        p.prefecture
-         = review.prefecture
-        p.genre
-         = review.genre&.delete('[,],"')
-      .col-sm-6.store_review
-        .review-title
-          = link_to review.title, review_path(review.id), class:"store"
+      - @reviews.where(prefecture:"山形県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
         br
-        .description
-         = review.description.to_s.html_safe
-    br
-    hr
+        hr
+- elsif @review.prefecture == "栃木県"
+      - @reviews.where(prefecture:"栃木県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "茨城県"
+      - @reviews.where(prefecture:"茨城県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "群馬県"
+      - @reviews.where(prefecture:"群馬県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "神奈川県"
+      - @reviews.where(prefecture:"神奈川県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "埼玉県"
+      - @reviews.where(prefecture:"埼玉県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "千葉県"
+      - @reviews.where(prefecture:"千葉県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "東京都"
+      - @reviews.where(prefecture:"東京都").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "石川県"
+      - @reviews.where(prefecture:"石川県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "富山県"
+      - @reviews.where(prefecture:"富山県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "福井県"
+      - @reviews.where(prefecture:"福井県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "山梨県"
+      - @reviews.where(prefecture:"山梨県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "長野県"
+      - @reviews.where(prefecture:"長野県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "新潟県"
+      - @reviews.where(prefecture:"新潟県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "愛知県"
+      - @reviews.where(prefecture:"愛知県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "静岡県"
+      - @reviews.where(prefecture:"静岡県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "三重県"
+      - @reviews.where(prefecture:"三重県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "岐阜県"
+      - @reviews.where(prefecture:"岐阜県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "和歌山県"
+      - @reviews.where(prefecture:"和歌山県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "奈良県"
+      - @reviews.where(prefecture:"奈良県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "大阪府"
+      - @reviews.where(prefecture:"大阪府").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "京都府"
+      - @reviews.where(prefecture:"京都府").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "兵庫県"
+      - @reviews.where(prefecture:"兵庫県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "岐阜県"
+      - @reviews.where(prefecture:"岐阜県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "広島県"
+      - @reviews.where(prefecture:"広島県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "岡山県"
+      - @reviews.where(prefecture:"岡山県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "山口県"
+      - @reviews.where(prefecture:"山口県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "鳥取県"
+      - @reviews.where(prefecture:"鳥取県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "島根県"
+      - @reviews.where(prefecture:"島根県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "高知県"
+      - @reviews.where(prefecture:"高知県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "愛媛県"
+      - @reviews.where(prefecture:"愛媛県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "香川県"
+      - @reviews.where(prefecture:"香川県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "徳島県"
+      - @reviews.where(prefecture:"徳島県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "福岡県"
+      - @reviews.where(prefecture:"福岡県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "熊本県"
+      - @reviews.where(prefecture:"熊本県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "大分県"
+      - @reviews.where(prefecture:"大分県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "佐賀県"
+      - @reviews.where(prefecture:"佐賀県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "長崎県"
+      - @reviews.where(prefecture:"長崎県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "宮崎県"
+      - @reviews.where(prefecture:"宮崎県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "鹿児島県"
+      - @reviews.where(prefecture:"鹿児島県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
+- elsif @review.prefecture == "沖縄県"
+      - @reviews.where(prefecture:"沖縄県").order("RANDOM()").limit(5).each do |review|
+        .row
+          .col-sm-1
+          .col-sm-4.center.put
+            = image_tag review.image_1.to_s, class:"index-image"
+            p.prefecture
+             = review.prefecture
+            p.genre
+             = review.genre&.delete('[,],"')
+          .col-sm-6.store_review
+            .review-title
+              = link_to review.title, review_path(review.id), class:"store"
+            br
+            .description
+             = review.description.to_s.html_safe
+        br
+        hr
