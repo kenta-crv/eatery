@@ -8,42 +8,6 @@ html
        = link_to "/" do
         = image_tag 'rogo.png',  class:"menu"
      .col-xs-4.col-sm-3
-         select#select[class="cp_ipselect cp_sl05"]
-           option[disabled selected value]
-             | 並び順を変更
-           option[value="/reviews?type=all"]
-             | 全件表示
-           option[value="/reviews?type=total_score"]
-             | 総合ランキング
-           option[value="/reviews?type=delicious_score"]
-             | 美味ランキング
-           option[value="/reviews?type=mood_score"]
-             | ムードランキング
-           option[value="/reviews?type=cost_performance_score"]
-             | コスパランキング
-           option[value="/reviews?type=service_score"]
-             | サービスランキング
-           option[value="/reviews?type=imagination_score"]
-             | 創造性ランキング
-
-
-     .col-xs-2.col-sm-1
-                .navToggle
-                  span
-                  span
-                  span
-                  span menu
-
-     nav.globalMenuSp
-           ul
-            li
-              = link_to  'トップページ', '/' , class: "col-md"
-            li
-              = link_to  '都道府県別おすすめ店', '/lists' , :class=>"col-md"
-            li
-              = link_to  'おすすめ店一覧', '/posts' , :class=>"col-md"
-            li
-              = link_to  '問い合わせ', '/contact' , :class=>"col-md"
 
 
 
