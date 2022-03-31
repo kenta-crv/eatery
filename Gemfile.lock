@@ -56,9 +56,9 @@ GEM
     bindex (0.8.1)
     bootsnap (1.11.1)
       msgpack (~> 1.2)
-    bootstrap-sass (3.3.7)
+    bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
+      sassc (>= 2.0.0)
     breadcrumbs_on_rails (4.1.0)
       railties (>= 5.0)
     builder (3.2.4)
@@ -161,6 +161,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.3-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.13.3-x86_64-linux)
+      racc (~> 1.4)
     oauth (0.5.8)
     omniauth (2.0.4)
       hashie (>= 3.4.6)
@@ -240,6 +242,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     select2-rails (4.0.13)
     selenium-webdriver (4.1.0)
       childprocess (>= 0.5, < 5.0)
@@ -295,11 +299,12 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-linux
 
 DEPENDENCIES
   annotate
   bootsnap (>= 1.1.0)
-  bootstrap-sass (~> 3.3.6)
+  bootstrap-sass (~> 3.4.1)
   breadcrumbs_on_rails
   byebug
   capybara (>= 2.15)
