@@ -91,7 +91,7 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 
 gem "sass-rails", "~>5.0"
-gem "bootstrap-sass", "~>3.3.6"
+gem "bootstrap-sass", "~>3.4.1"
 gem "jquery-rails"
 gem "jquery-ui-rails"
 
