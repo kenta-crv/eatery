@@ -6,7 +6,7 @@ html
    .row
      .col-xs-6.col-sm-8
        = link_to "https://eatery-japan.com/" do
-        = image_tag 'rogo.png',  class:"menu"
+        = image_tag 'rogo.png',  class:"menu", alt:"eatery japanロゴ"
      .col-xs-4.col-sm-3
          /select#select[class="cp_ipselect cp_sl05"]
            option[disabled selected value]
@@ -64,7 +64,7 @@ html
   body
    .row
     .col-sm-12
-     = image_tag "base.webp", width:"100%"
+     = image_tag "base.webp", width:"100%", alt:"eatery japanおすすめグルメ紹介"
    .row
     .col-sm-8
      = yield
