@@ -10,7 +10,7 @@
           .row
             .col-sm-1
             .col-sm-4.center
-              = image_tag review.image_1.to_s, class:"index-image"
+              = image_tag review.image_1.to_s, class:"index-image", alt:review.title
             .col-sm-6.store_review
               .review-title
                 = link_to review.title, review_path(review.id), class:"store"
